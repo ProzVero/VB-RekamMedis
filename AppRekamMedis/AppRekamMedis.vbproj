@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49E8BB20-0937-4647-959D-15B7CDA9419D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>AppRekamMedis.My.MyApplication</StartupObject>
+    <RootNamespace>AppRekamMedis</RootNamespace>
+    <AssemblyName>AppRekamMedis</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>AppRekamMedis.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>AppRekamMedis.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PdfSharp, Version=1.51.5185.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.51.5185-beta\lib\net20\PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.51.5185.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.51.5185-beta\lib\net20\PdfSharp.Charting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database.vb" />
+    <Compile Include="dbRekamMedisDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRekamMedisDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbRekamMedisDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRekamMedisDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaporan.Designer.vb">
+      <DependentUpon>FormLaporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.vb">
+      <DependentUpon>FormLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.vb">
+      <DependentUpon>FormMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaseinEdit.Designer.vb">
+      <DependentUpon>FormPaseinEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPaseinEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPengaturanOlah.Designer.vb">
+      <DependentUpon>FormPengaturanOlah.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPengaturanOlah.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRekam.Designer.vb">
+      <DependentUpon>FormRekam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRekam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPasien.Designer.vb">
+      <DependentUpon>FormPasien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPasien.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPengaturan.Designer.vb">
+      <DependentUpon>FormPengaturan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPengaturan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPesan.Designer.vb">
+      <DependentUpon>FormPesan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPesan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRekamOlah.Designer.vb">
+      <DependentUpon>FormRekamOlah.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRekamOlah.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormLaporan.resx">
+      <DependentUpon>FormLaporan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaseinEdit.resx">
+      <DependentUpon>FormPaseinEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPengaturan.resx">
+      <DependentUpon>FormPengaturan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPengaturanOlah.resx">
+      <DependentUpon>FormPengaturanOlah.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRekam.resx">
+      <DependentUpon>FormRekam.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPasien.resx">
+      <DependentUpon>FormPasien.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPesan.resx">
+      <DependentUpon>FormPesan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRekamOlah.resx">
+      <DependentUpon>FormRekamOlah.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dbRekamMedisDataSet.xsc">
+      <DependentUpon>dbRekamMedisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbRekamMedisDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbRekamMedisDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbRekamMedisDataSet.xss">
+      <DependentUpon>dbRekamMedisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbRekamMedisDataSet1.xsc">
+      <DependentUpon>dbRekamMedisDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbRekamMedisDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbRekamMedisDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbRekamMedisDataSet1.xss">
+      <DependentUpon>dbRekamMedisDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dbRekamMedis.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dbRekamMedis_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>dbRekamMedis.mdf</DependentUpon>
+    </Content>
+    <None Include="Res\RM2.png" />
+    <None Include="Res\RM1.png" />
+    <None Include="Res\pasien.png" />
+    <None Include="Res\pengaturan.png" />
+    <None Include="Res\admin.png" />
+    <None Include="Res\laporan.png" />
+    <Content Include="logo.ico" />
+    <None Include="Res\1.png" />
+    <None Include="Res\2.png" />
+    <None Include="Res\3.png" />
+    <None Include="Res\4.png" />
+    <None Include="Res\back2.png" />
+    <Content Include="Res\logo.png" />
+    <None Include="Res\rekammedik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
