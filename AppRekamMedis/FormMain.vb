@@ -7,7 +7,11 @@ Public Class FormMain
     Public MouseDownY As Integer
 
     Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
-        Application.Exit()
+        Dim result As DialogResult = MessageBox.Show("Tutup Aplikasi?", "AppRekamMedis", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
+
     End Sub
 
     Private Sub PicMin_Click(sender As Object, e As EventArgs) Handles PicMin.Click
@@ -60,7 +64,7 @@ Public Class FormMain
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
         FormPengaturan.Show()
-        Me.Visible = False
+        'Me.Visible = False
     End Sub
 
     Public Sub setLocation()

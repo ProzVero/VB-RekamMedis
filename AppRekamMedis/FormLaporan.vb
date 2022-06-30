@@ -14,11 +14,41 @@ Public Class FormLaporan
     Dim db As New Database
     Dim kd1, kd2 As String
     Public tambah As Boolean = False
+
+    Private Sub setLocation()
+        Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
+        WindowState = FormWindowState.Maximized
+        Label1.Left = (Me.Width - Label1.Width) / 2
+        Label2.Left = (Me.Width - Label2.Width) / 2
+        PictureBox2.Left = Me.Width - PictureBox2.Width - 80
+        picClose.Left = Me.Width - 30
+        PicMin.Left = Me.Width - 60
+        Panel1.Width = Me.Width
+        Title.Left = (Me.Width - Title.Width) / 2
+
+        'pnlLaporan
+        pnlLaporan.Width = Me.Width - 60
+        pnlLaporan.Height = Me.Height - 220
+
+        'btn Atas
+        btnPrint.Left = pnlLaporan.Width - 120
+
+        'Data Grid
+        DG1.Width = pnlLaporan.Width - 60
+        DG2.Width = pnlLaporan.Width - 60
+
+        DG1.Height = (pnlLaporan.Height - 90) * 0.7
+        DG2.Height = (pnlLaporan.Height - 90) * 0.3
+        DG2.Top = (pnlLaporan.Height * 0.7)
+
+    End Sub
+
     Private Sub FormLaporan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DbRekamMedisDataSet1.rekam' table. You can move, or remove it, as needed.
         'Me.RekamTableAdapter.Fill(Me.DbRekamMedisDataSet1.rekam)
         'TODO: This line of code loads data into the 'DbRekamMedisDataSet1.Pasien' table. You can move, or remove it, as needed.
         'Me.PasienTableAdapter.Fill(Me.DbRekamMedisDataSet1.Pasien)
+        Call setLocation()
 
         DG1.DefaultCellStyle.ForeColor = Color.Black
         DG2.DefaultCellStyle.ForeColor = Color.Black
@@ -51,13 +81,7 @@ Public Class FormLaporan
         DG2.Columns(5).Width = widthClm2 * 7
         DG2.Columns(6).Width = widthClm2 * 3
 
-        Panel3.Width = Me.Width - 20
-        Panel3.Height = Me.Height - pnlTop.Height - 45
-        DG1.Width = Me.Width - 40
-        DG1.Height = (Panel3.Height - 40) * 0.7
-        DG2.Width = Me.Width - 40
-        DG2.Height = (Panel3.Height - 40) * 0.3
-        DG2.Top = (Panel3.Height * 0.7) - 10
+
     End Sub
 
     Private Sub TampilGrid1()
@@ -101,7 +125,7 @@ Public Class FormLaporan
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         If DG2.SelectedRows.Count > 0 Then
 
             kd2 = DG2.CurrentRow.Cells(0).Value
@@ -111,9 +135,9 @@ Public Class FormLaporan
         End If
     End Sub
 
-    Private Sub txtCriPasien_TextChanged(sender As Object, e As EventArgs) 
+    Private Sub txtCri_TextChanged(sender As Object, e As EventArgs) Handles txtCri.TextChanged
         db.koneksi()
-        Dim query = "select * from pasien where idPasien like '%" & txtCriPasien.Text & "%' or nama like '%" & txtCriPasien.Text & "%' or noKTP like '%" & txtCriPasien.Text & "%' order by idPasien desc"
+        Dim query = "select * from pasien where idPasien like '%" & txtCri.Text & "%' or nama like '%" & txtCri.Text & "%' or noKTP like '%" & txtCri.Text & "%' order by idPasien desc"
         Dim DA As New SqlDataAdapter(query, db.konek)
         Dim DS As New DataSet
         DA.Fill(DS)
@@ -122,74 +146,19 @@ Public Class FormLaporan
         DG1.Refresh()
     End Sub
 
-    Private Sub btnBack_Click(sender As Object, e As EventArgs) 
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         FormMain.Show()
         Me.Close()
     End Sub
 
-    Private Sub picMin_Click(sender As Object, e As EventArgs) 
+    Private Sub picMin_Click(sender As Object, e As EventArgs) Handles PicMin.Click
         Me.WindowState = WindowState.Minimized
-        picClose.Left = Me.Width - picClose.Width - 8
-        picMax.Left = Me.Width - picMax.Width - 36
-        picMin.Left = Me.Width - picMin.Width - 62
-        lblKasir.Left = (Me.Width / 2) - (lblKasir.Width / 2) - 28
     End Sub
 
-    Private Sub picMax_Click(sender As Object, e As EventArgs) 
-        If WindowState = WindowState.Normal Then
-            WindowState = FormWindowState.Maximized
-            picClose.Left = Me.Width - picClose.Width - 8
-            picMax.Left = Me.Width - picMax.Width - 36
-            picMin.Left = Me.Width - picMin.Width - 62
-            lblKasir.Left = (Me.Width / 2) - (lblKasir.Width / 2) - 28
-            Button1.Left = Me.Width - Button1.Width - 10
-
-            Call FormatGrid()
-        ElseIf WindowState = WindowState.Maximized Then
-            WindowState = WindowState.Normal
-            picClose.Left = Me.Width - picClose.Width - 8
-            picMax.Left = Me.Width - picMax.Width - 36
-            picMin.Left = Me.Width - picMin.Width - 62
-            lblKasir.Left = (Me.Width / 2) - (lblKasir.Width / 2) - 28
-            Button1.Left = Me.Width - Button1.Width - 10
-
-            Call FormatGrid()
-        End If
-    End Sub
-
-    Private Sub picClose_Click(sender As Object, e As EventArgs) 
-        Application.Exit()
-    End Sub
-
-    Private Sub pnlTop_Paint(sender As Object, e As PaintEventArgs) 
-        picClose.Left = Me.Width - picClose.Width - 8
-        picMax.Left = Me.Width - picMax.Width - 36
-        picMin.Left = Me.Width - picMin.Width - 62
-        lblKasir.Left = (Me.Width / 2) - (lblKasir.Width / 2) - 28
-    End Sub
-
-    Private Sub pnlTop_MouseDown(sender As Object, e As MouseEventArgs) 
-        If e.Button = MouseButtons.Left Then
-            BeingDragged = True
-            MouseDownX = e.X
-            MouseDownY = e.Y
-        End If
-    End Sub
-
-    Private Sub pnlTop_MouseUp(sender As Object, e As MouseEventArgs) 
-        If e.Button = MouseButtons.Left Then
-            BeingDragged = False
-        End If
-    End Sub
-
-    Private Sub pnlTop_MouseMove(sender As Object, e As MouseEventArgs) 
-        If BeingDragged = True Then
-            Dim tmp As Point = New Point()
-
-            tmp.X = Me.Location.X + (e.X - MouseDownX)
-            tmp.Y = Me.Location.Y + (e.Y - MouseDownY)
-            Me.Location = tmp
-            tmp = Nothing
+    Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
+        Dim result As DialogResult = MessageBox.Show("Tutup Aplikasi?", "AppRekamMedis", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Application.Exit()
         End If
     End Sub
 

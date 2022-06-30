@@ -107,7 +107,7 @@ Partial Class FormPengaturanOlah
         '
         'Panel7
         '
-        Me.Panel7.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel7.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel7.Controls.Add(Me.lblID)
         Me.Panel7.Controls.Add(Me.Label11)
         Me.Panel7.Controls.Add(Me.Label12)
@@ -153,7 +153,7 @@ Partial Class FormPengaturanOlah
         '
         'Panel10
         '
-        Me.Panel10.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel10.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel10.Controls.Add(Me.TextBox2)
         Me.Panel10.Controls.Add(Me.Label10)
         Me.Panel10.Controls.Add(Me.Label13)
@@ -214,7 +214,7 @@ Partial Class FormPengaturanOlah
         '
         'Panel11
         '
-        Me.Panel11.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel11.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel11.Controls.Add(Me.TextBox3)
         Me.Panel11.Controls.Add(Me.Label18)
         Me.Panel11.Controls.Add(Me.Label19)
@@ -273,7 +273,7 @@ Partial Class FormPengaturanOlah
         '
         'Panel12
         '
-        Me.Panel12.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel12.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel12.Controls.Add(Me.TextBox4)
         Me.Panel12.Controls.Add(Me.Label21)
         Me.Panel12.Controls.Add(Me.Label22)
@@ -333,7 +333,7 @@ Partial Class FormPengaturanOlah
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -395,6 +395,7 @@ Partial Class FormPengaturanOlah
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.ClientSize = New System.Drawing.Size(480, 323)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnSimpanPasien)

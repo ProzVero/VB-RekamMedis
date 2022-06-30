@@ -29,7 +29,7 @@ Partial Class FormLaporan
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLaporan))
         Me.DG2 = New System.Windows.Forms.DataGridView()
         Me.IdRekamDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AnamnesaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,28 +52,40 @@ Partial Class FormLaporan
         Me.PasienBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PasienTableAdapter = New AppRekamMedis.dbRekamMedisDataSet1TableAdapters.PasienTableAdapter()
         Me.RekamTableAdapter = New AppRekamMedis.dbRekamMedisDataSet1TableAdapters.rekamTableAdapter()
-        Me.Panel3.SuspendLayout()
+        Me.Title = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PicMin = New System.Windows.Forms.PictureBox()
+        Me.picClose = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pnlLaporan = New System.Windows.Forms.Panel()
+        Me.btnPrint = New System.Windows.Forms.Button()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.txtCri = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.btnBack = New System.Windows.Forms.Button()
         CType(Me.DG2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RekamBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbRekamMedisDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DG1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PasienBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicMin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlLaporan.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.DG2)
-        Me.Panel3.Controls.Add(Me.DG1)
-        Me.Panel3.Location = New System.Drawing.Point(10, 86)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(860, 500)
-        Me.Panel3.TabIndex = 26
         '
         'DG2
         '
         Me.DG2.AllowUserToAddRows = False
         Me.DG2.AllowUserToDeleteRows = False
         Me.DG2.AutoGenerateColumns = False
+        Me.DG2.BackgroundColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -94,7 +106,7 @@ Partial Class FormLaporan
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DG2.DefaultCellStyle = DataGridViewCellStyle2
         Me.DG2.EnableHeadersVisualStyles = False
-        Me.DG2.Location = New System.Drawing.Point(10, 195)
+        Me.DG2.Location = New System.Drawing.Point(30, 253)
         Me.DG2.Name = "DG2"
         Me.DG2.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -105,7 +117,7 @@ Partial Class FormLaporan
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DG2.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.DG2.Size = New System.Drawing.Size(840, 175)
+        Me.DG2.Size = New System.Drawing.Size(780, 175)
         Me.DG2.TabIndex = 2
         '
         'IdRekamDataGridViewTextBoxColumn
@@ -179,6 +191,7 @@ Partial Class FormLaporan
         Me.DG1.AllowUserToAddRows = False
         Me.DG1.AllowUserToDeleteRows = False
         Me.DG1.AutoGenerateColumns = False
+        Me.DG1.BackgroundColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.Navy
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -199,7 +212,7 @@ Partial Class FormLaporan
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DG1.DefaultCellStyle = DataGridViewCellStyle5
         Me.DG1.EnableHeadersVisualStyles = False
-        Me.DG1.Location = New System.Drawing.Point(10, 10)
+        Me.DG1.Location = New System.Drawing.Point(30, 60)
         Me.DG1.Name = "DG1"
         Me.DG1.ReadOnly = True
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -210,7 +223,7 @@ Partial Class FormLaporan
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DG1.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.DG1.Size = New System.Drawing.Size(840, 175)
+        Me.DG1.Size = New System.Drawing.Size(780, 175)
         Me.DG1.TabIndex = 1
         '
         'IdPasienDataGridViewTextBoxColumn
@@ -290,26 +303,213 @@ Partial Class FormLaporan
         '
         Me.RekamTableAdapter.ClearBeforeFill = True
         '
+        'Title
+        '
+        Me.Title.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Title.AutoSize = True
+        Me.Title.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Title.Location = New System.Drawing.Point(380, 151)
+        Me.Title.Name = "Title"
+        Me.Title.Size = New System.Drawing.Size(139, 31)
+        Me.Title.TabIndex = 38
+        Me.Title.Text = "LAPORAN"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(345, 72)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(208, 31)
+        Me.Label2.TabIndex = 33
+        Me.Label2.Text = "KOTA PALOPO"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel1.Location = New System.Drawing.Point(0, 136)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(900, 5)
+        Me.Panel1.TabIndex = 31
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(258, 37)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(383, 31)
+        Me.Label1.TabIndex = 32
+        Me.Label1.Text = "PUSAT KESEHATAN HEWAN"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.RM2
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox2.Location = New System.Drawing.Point(689, 18)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(120, 122)
+        Me.PictureBox2.TabIndex = 37
+        Me.PictureBox2.TabStop = False
+        '
+        'PicMin
+        '
+        Me.PicMin.BackgroundImage = CType(resources.GetObject("PicMin.BackgroundImage"), System.Drawing.Image)
+        Me.PicMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PicMin.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicMin.InitialImage = Nothing
+        Me.PicMin.Location = New System.Drawing.Point(844, 8)
+        Me.PicMin.Name = "PicMin"
+        Me.PicMin.Size = New System.Drawing.Size(20, 20)
+        Me.PicMin.TabIndex = 36
+        Me.PicMin.TabStop = False
+        '
+        'picClose
+        '
+        Me.picClose.BackgroundImage = CType(resources.GetObject("picClose.BackgroundImage"), System.Drawing.Image)
+        Me.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.picClose.Location = New System.Drawing.Point(870, 8)
+        Me.picClose.Name = "picClose"
+        Me.picClose.Size = New System.Drawing.Size(20, 20)
+        Me.picClose.TabIndex = 35
+        Me.picClose.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(80, 18)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox1.TabIndex = 34
+        Me.PictureBox1.TabStop = False
+        '
+        'pnlLaporan
+        '
+        Me.pnlLaporan.BackColor = System.Drawing.Color.Sienna
+        Me.pnlLaporan.Controls.Add(Me.DG2)
+        Me.pnlLaporan.Controls.Add(Me.DG1)
+        Me.pnlLaporan.Controls.Add(Me.btnPrint)
+        Me.pnlLaporan.Controls.Add(Me.Panel8)
+        Me.pnlLaporan.Controls.Add(Me.btnBack)
+        Me.pnlLaporan.Location = New System.Drawing.Point(30, 190)
+        Me.pnlLaporan.Name = "pnlLaporan"
+        Me.pnlLaporan.Size = New System.Drawing.Size(840, 480)
+        Me.pnlLaporan.TabIndex = 39
+        '
+        'btnPrint
+        '
+        Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPrint.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
+        Me.btnPrint.FlatAppearance.BorderSize = 2
+        Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrint.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrint.ForeColor = System.Drawing.Color.Black
+        Me.btnPrint.Location = New System.Drawing.Point(714, 11)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(90, 35)
+        Me.btnPrint.TabIndex = 9
+        Me.btnPrint.Text = "Print"
+        Me.btnPrint.UseVisualStyleBackColor = False
+        '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.Transparent
+        Me.Panel8.Controls.Add(Me.txtCri)
+        Me.Panel8.Controls.Add(Me.Label5)
+        Me.Panel8.Controls.Add(Me.Label15)
+        Me.Panel8.Location = New System.Drawing.Point(86, 13)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(378, 30)
+        Me.Panel8.TabIndex = 6
+        '
+        'txtCri
+        '
+        Me.txtCri.BackColor = System.Drawing.SystemColors.Control
+        Me.txtCri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCri.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCri.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCri.ForeColor = System.Drawing.Color.Black
+        Me.txtCri.Location = New System.Drawing.Point(76, 5)
+        Me.txtCri.Name = "txtCri"
+        Me.txtCri.Size = New System.Drawing.Size(287, 22)
+        Me.txtCri.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(55, 5)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(15, 19)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = ":"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(9, 5)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(40, 19)
+        Me.Label15.TabIndex = 0
+        Me.Label15.Text = "Cari"
+        '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.Color.Transparent
+        Me.btnBack.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.back2
+        Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBack.FlatAppearance.BorderSize = 0
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.ForeColor = System.Drawing.Color.Transparent
+        Me.btnBack.Location = New System.Drawing.Point(20, 15)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(60, 26)
+        Me.btnBack.TabIndex = 1
+        Me.btnBack.UseVisualStyleBackColor = False
+        '
         'FormLaporan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(900, 700)
-        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.pnlLaporan)
+        Me.Controls.Add(Me.Title)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PicMin)
+        Me.Controls.Add(Me.picClose)
+        Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormLaporan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormLaporan"
-        Me.Panel3.ResumeLayout(False)
         CType(Me.DG2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RekamBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DbRekamMedisDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DG1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PasienBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicMin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlLaporan.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel3 As Panel
     Friend WithEvents DG2 As DataGridView
     Friend WithEvents DG1 As DataGridView
     Friend WithEvents DbRekamMedisDataSet1 As dbRekamMedisDataSet1
@@ -332,4 +532,19 @@ Partial Class FormLaporan
     Friend WithEvents GejalaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AnamnesaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdRekamDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Title As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PicMin As PictureBox
+    Friend WithEvents picClose As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pnlLaporan As Panel
+    Friend WithEvents btnPrint As Button
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents txtCri As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents btnBack As Button
 End Class

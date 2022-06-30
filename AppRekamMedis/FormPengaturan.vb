@@ -10,17 +10,6 @@ Public Class FormPengaturan
 
     Private Sub FormPengaturan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-
-
-
-
-
-
-
-
-
-
         'TODO: This line of code loads data into the 'DbRekamMedisDataSet.users' table. You can move, or remove it, as needed.
         'Me.UsersTableAdapter.Fill(Me.DbRekamMedisDataSet.users)
         DG.DefaultCellStyle.ForeColor = Color.Black
@@ -122,10 +111,6 @@ Public Class FormPengaturan
         Call TampilGrid()
     End Sub
 
-    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        FormMain.Show()
-        Me.Close()
-    End Sub
     Private Sub picMin_Click(sender As Object, e As EventArgs) Handles picMin.Click
         Me.WindowState = WindowState.Minimized
         picClose.Left = Me.Width - picClose.Width - pnlLeft.Width - 8
@@ -133,7 +118,8 @@ Public Class FormPengaturan
         lblKasir.Left = (Me.Width / 2) - (lblKasir.Width / 2) - 28
     End Sub
     Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
-        Application.Exit()
+        'FormMain.Show()
+        Me.Close()
     End Sub
 
     Private Sub pnlTop_Paint(sender As Object, e As PaintEventArgs) Handles pnlTop.Paint

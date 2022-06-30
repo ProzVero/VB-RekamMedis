@@ -28,8 +28,6 @@ Partial Class FormPengaturan
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlLeft = New System.Windows.Forms.Panel()
-        Me.pnlBack = New System.Windows.Forms.Panel()
-        Me.btnBack = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnHapus = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
@@ -49,7 +47,6 @@ Partial Class FormPengaturan
         Me.DbRekamMedisDataSet = New AppRekamMedis.dbRekamMedisDataSet()
         Me.UsersTableAdapter = New AppRekamMedis.dbRekamMedisDataSetTableAdapters.usersTableAdapter()
         Me.pnlLeft.SuspendLayout()
-        Me.pnlBack.SuspendLayout()
         Me.pnlTop.SuspendLayout()
         CType(Me.picMin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,9 +60,9 @@ Partial Class FormPengaturan
         'pnlLeft
         '
         Me.pnlLeft.BackColor = System.Drawing.Color.Black
-        Me.pnlLeft.Controls.Add(Me.pnlBack)
         Me.pnlLeft.Controls.Add(Me.btnEdit)
         Me.pnlLeft.Controls.Add(Me.btnHapus)
+        Me.pnlLeft.Controls.Add(Me.pic)
         Me.pnlLeft.Controls.Add(Me.btnTambah)
         Me.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlLeft.ForeColor = System.Drawing.SystemColors.ControlText
@@ -73,30 +70,6 @@ Partial Class FormPengaturan
         Me.pnlLeft.Name = "pnlLeft"
         Me.pnlLeft.Size = New System.Drawing.Size(87, 400)
         Me.pnlLeft.TabIndex = 23
-        '
-        'pnlBack
-        '
-        Me.pnlBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.pnlBack.Controls.Add(Me.btnBack)
-        Me.pnlBack.Location = New System.Drawing.Point(0, 0)
-        Me.pnlBack.Name = "pnlBack"
-        Me.pnlBack.Size = New System.Drawing.Size(87, 38)
-        Me.pnlBack.TabIndex = 19
-        '
-        'btnBack
-        '
-        Me.btnBack.BackColor = System.Drawing.Color.Transparent
-        Me.btnBack.BackgroundImage = CType(resources.GetObject("btnBack.BackgroundImage"), System.Drawing.Image)
-        Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBack.FlatAppearance.BorderSize = 0
-        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBack.ForeColor = System.Drawing.Color.Transparent
-        Me.btnBack.Location = New System.Drawing.Point(13, 7)
-        Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(60, 26)
-        Me.btnBack.TabIndex = 0
-        Me.btnBack.UseVisualStyleBackColor = False
         '
         'btnEdit
         '
@@ -148,7 +121,6 @@ Partial Class FormPengaturan
         Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.pnlTop.Controls.Add(Me.picMin)
         Me.pnlTop.Controls.Add(Me.picClose)
-        Me.pnlTop.Controls.Add(Me.pic)
         Me.pnlTop.Controls.Add(Me.lblKasir)
         Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTop.Location = New System.Drawing.Point(87, 0)
@@ -181,12 +153,12 @@ Partial Class FormPengaturan
         '
         'pic
         '
-        Me.pic.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.admin
+        Me.pic.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources._4
         Me.pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pic.ErrorImage = Nothing
-        Me.pic.Location = New System.Drawing.Point(3, 4)
+        Me.pic.Location = New System.Drawing.Point(4, 6)
         Me.pic.Name = "pic"
-        Me.pic.Size = New System.Drawing.Size(37, 28)
+        Me.pic.Size = New System.Drawing.Size(77, 69)
         Me.pic.TabIndex = 0
         Me.pic.TabStop = False
         '
@@ -228,6 +200,7 @@ Partial Class FormPengaturan
         'DG
         '
         Me.DG.AutoGenerateColumns = False
+        Me.DG.BackgroundColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -313,7 +286,6 @@ Partial Class FormPengaturan
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormPengaturan"
         Me.pnlLeft.ResumeLayout(False)
-        Me.pnlBack.ResumeLayout(False)
         Me.pnlTop.ResumeLayout(False)
         Me.pnlTop.PerformLayout()
         CType(Me.picMin, System.ComponentModel.ISupportInitialize).EndInit()
@@ -328,8 +300,6 @@ Partial Class FormPengaturan
     End Sub
 
     Friend WithEvents pnlLeft As Panel
-    Friend WithEvents pnlBack As Panel
-    Friend WithEvents btnBack As Button
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnHapus As Button
     Friend WithEvents btnTambah As Button

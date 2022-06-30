@@ -251,6 +251,13 @@ Public Class FormRekam
         End Try
     End Sub
 
+    Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
+        Dim result As DialogResult = MessageBox.Show("Tutup Aplikasi?", "AppRekamMedis", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
+
     Sub pdfHeader()
         Dim logoPath = db.appPath & "\logo.png"
         Dim image As XImage = XImage.FromFile(logoPath)

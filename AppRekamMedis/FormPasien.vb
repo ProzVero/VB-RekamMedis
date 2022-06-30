@@ -58,7 +58,10 @@ Public Class FormPasien
     End Sub
 
     Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
-        Application.Exit()
+        Dim result As DialogResult = MessageBox.Show("Tutup Aplikasi?", "AppRekamMedis", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
     End Sub
 
 

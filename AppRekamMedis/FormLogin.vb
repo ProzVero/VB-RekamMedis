@@ -23,45 +23,6 @@ Public Class FormLogin
     Dim MouseDownX As Integer
     Dim MouseDownY As Integer
 
-    Private Sub FormLogin_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
-        If e.Button = MouseButtons.Left Then
-            BeingDragged = True
-            MouseDownX = e.X
-            MouseDownY = e.Y
-        End If
-    End Sub
-
-    Private Sub FormLogin_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
-        If e.Button = MouseButtons.Left Then
-            BeingDragged = False
-        End If
-    End Sub
-
-    Private Sub FormLogin_MouseMove(sender As Object, e As MouseEventArgs) Handles MyBase.MouseMove
-        Me.Label3.BackColor = Color.White
-        If BeingDragged = True Then
-            Dim tmp As Point = New Point()
-
-            tmp.X = Me.Location.X + (e.X - MouseDownX)
-            tmp.Y = Me.Location.Y + (e.Y - MouseDownY)
-            Me.Location = tmp
-            tmp = Nothing
-        End If
-
-        Label3.Left = Me.Width - Label3.Width - 10
-        Panel1.Width = Me.Width
-        Label1.Left = (Me.Width - Label1.Width) / 2
-        Label2.Left = (Me.Width - Label2.Width) / 2
-        PictureBox2.Left = Me.Width - PictureBox2.Width - 80
-        Panel4.Left = (Me.Width - Panel4.Width) / 2
-        Panel4.Top = (Me.Height - Panel4.Height + 20) / 2
-        PictureBox3.Left = Me.Width - PictureBox3.Width
-        PictureBox3.Top = Me.Height - PictureBox3.Height
-
-        Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
-        WindowState = FormWindowState.Maximized
-
-    End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
         Close()
@@ -114,4 +75,19 @@ Public Class FormLogin
 
     End Sub
 
+    Private Sub FormLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        Label3.Left = Me.Width - Label3.Width - 10
+        Panel1.Width = Me.Width
+        Label1.Left = (Me.Width - Label1.Width) / 2
+        Label2.Left = (Me.Width - Label2.Width) / 2
+        PictureBox2.Left = Me.Width - PictureBox2.Width - 80
+        Panel4.Left = (Me.Width - Panel4.Width) / 2
+        Panel4.Top = (Me.Height - Panel4.Height + 20) / 2
+        PictureBox3.Left = Me.Width - PictureBox3.Width
+        PictureBox3.Top = Me.Height - PictureBox3.Height
+
+        Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
+        WindowState = FormWindowState.Maximized
+    End Sub
 End Class
