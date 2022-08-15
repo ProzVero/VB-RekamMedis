@@ -26,23 +26,24 @@ Partial Class FormMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMain))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlLogin = New System.Windows.Forms.Panel()
         Me.PasienBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbRekamMedisDataSet1 = New AppRekamMedis.dbRekamMedisDataSet1()
+        Me.PasienTableAdapter = New AppRekamMedis.dbRekamMedisDataSet1TableAdapters.PasienTableAdapter()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PicMin = New System.Windows.Forms.PictureBox()
         Me.picClose = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PasienTableAdapter = New AppRekamMedis.dbRekamMedisDataSet1TableAdapters.PasienTableAdapter()
         Me.Panel4.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -50,6 +51,7 @@ Partial Class FormMain
         Me.pnlLogin.SuspendLayout()
         CType(Me.PasienBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbRekamMedisDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicMin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,20 +77,6 @@ Partial Class FormMain
         Me.Panel4.Size = New System.Drawing.Size(175, 150)
         Me.Panel4.TabIndex = 15
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources._2
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(7, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(160, 141)
-        Me.Button1.TabIndex = 0
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Panel7
         '
         Me.Panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
@@ -97,20 +85,6 @@ Partial Class FormMain
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(175, 150)
         Me.Panel7.TabIndex = 18
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources._4
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(7, 3)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(160, 141)
-        Me.Button4.TabIndex = 0
-        Me.Button4.UseVisualStyleBackColor = False
         '
         'Panel6
         '
@@ -121,20 +95,6 @@ Partial Class FormMain
         Me.Panel6.Size = New System.Drawing.Size(175, 150)
         Me.Panel6.TabIndex = 17
         '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources._3
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(7, 3)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(160, 141)
-        Me.Button3.TabIndex = 0
-        Me.Button3.UseVisualStyleBackColor = False
-        '
         'Panel5
         '
         Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
@@ -143,21 +103,6 @@ Partial Class FormMain
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(175, 150)
         Me.Panel5.TabIndex = 16
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources._1
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.Color.Chocolate
-        Me.Button2.Location = New System.Drawing.Point(7, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(160, 141)
-        Me.Button2.TabIndex = 0
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -200,11 +145,85 @@ Partial Class FormMain
         Me.DbRekamMedisDataSet1.DataSetName = "dbRekamMedisDataSet1"
         Me.DbRekamMedisDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'PasienTableAdapter
+        '
+        Me.PasienTableAdapter.ClearBeforeFill = True
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.logou
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox3.InitialImage = Nothing
+        Me.PictureBox3.Location = New System.Drawing.Point(819, 10)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(20, 20)
+        Me.PictureBox3.TabIndex = 21
+        Me.PictureBox3.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.A
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(7, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(160, 141)
+        Me.Button1.TabIndex = 0
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.B
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.Color.Chocolate
+        Me.Button2.Location = New System.Drawing.Point(7, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(160, 141)
+        Me.Button2.TabIndex = 0
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Button3.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.C
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(7, 3)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(160, 141)
+        Me.Button3.TabIndex = 0
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.Transparent
+        Me.Button4.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.D
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Location = New System.Drawing.Point(7, 3)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(160, 141)
+        Me.Button4.TabIndex = 0
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.RM2
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox2.Location = New System.Drawing.Point(690, 20)
+        Me.PictureBox2.Location = New System.Drawing.Point(676, 20)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(120, 122)
         Me.PictureBox2.TabIndex = 19
@@ -244,15 +263,12 @@ Partial Class FormMain
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
         '
-        'PasienTableAdapter
-        '
-        Me.PasienTableAdapter.ClearBeforeFill = True
-        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(900, 600)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.pnlLogin)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
@@ -273,6 +289,7 @@ Partial Class FormMain
         Me.pnlLogin.ResumeLayout(False)
         CType(Me.PasienBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DbRekamMedisDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicMin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
@@ -300,4 +317,5 @@ Partial Class FormMain
     Friend WithEvents DbRekamMedisDataSet1 As dbRekamMedisDataSet1
     Friend WithEvents PasienBindingSource As BindingSource
     Friend WithEvents PasienTableAdapter As dbRekamMedisDataSet1TableAdapters.PasienTableAdapter
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

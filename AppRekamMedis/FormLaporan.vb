@@ -61,24 +61,24 @@ Public Class FormLaporan
         Dim widthDG1 = DG1.Width
         Dim widthDG2 = DG2.Width
 
-        Dim widthClm1 As Integer = Fix((widthDG1 - 50) / 20)
+        Dim widthClm1 As Integer = Fix((widthDG1 - 50) / 25)
         Dim widthClm2 As Integer = Fix((widthDG2 - 50) / 25)
 
         DG1.Columns(0).Width = widthClm1 * 2
         DG1.Columns(1).Width = widthClm1 * 3
         DG1.Columns(2).Width = widthClm1 * 4
-        DG1.Columns(3).Width = widthClm1 * 2
-        DG1.Columns(4).Width = widthClm1
-        DG1.Columns(5).Width = widthClm1
+        DG1.Columns(3).Width = widthClm1 * 3
+        DG1.Columns(4).Width = widthClm1 * 4
+        DG1.Columns(5).Width = widthClm1 * 2
         DG1.Columns(6).Width = widthClm1 * 5
         DG1.Columns(7).Width = widthClm1 * 2
         'MsgBox("'" & widthDG & "'- '" & widthClm & "'")
         DG2.Columns(0).Width = widthClm2 * 3
-        DG2.Columns(1).Width = widthClm2 * 3
-        DG2.Columns(2).Width = widthClm2 * 3
-        DG2.Columns(3).Width = widthClm2 * 3
-        DG2.Columns(4).Width = widthClm2 * 3
-        DG2.Columns(5).Width = widthClm2 * 7
+        DG2.Columns(1).Width = widthClm2 * 4
+        DG2.Columns(2).Width = widthClm2 * 4
+        DG2.Columns(3).Width = widthClm2 * 4
+        DG2.Columns(4).Width = widthClm2 * 4
+        DG2.Columns(5).Width = widthClm2 * 4
         DG2.Columns(6).Width = widthClm2 * 3
 
 
@@ -231,8 +231,7 @@ Public Class FormLaporan
         graph.DrawString("PEMERINTAH KOTA PALOPO",
                          font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
         y += l1
-        graph.DrawString("DINAS PERTANIAN PETERNAKAN DAN PERKEBUN
-AN",
+        graph.DrawString("DINAS PERTANIAN PETERNAKAN DAN PERKEBUNAN",
                          font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
         y += l1
         graph.DrawString("PUSKESWAN PALOPO",
@@ -295,6 +294,18 @@ AN",
 
             Dim txt = DR("ket").ToString
             Dim tfHeight = MeasureHeight(graph, txt, font2, tWidth)
+
+            Dim txtAnamnesa = DR("anamnesa").ToString
+            Dim txtGejala = DR("gejala").ToString
+            Dim txtDiagnosa = DR("diagnosa").ToString
+            Dim txtPengobatan = DR("pengobatan").ToString
+
+            Dim htAnamnesa = MeasureHeight(graph, txtAnamnesa, font2, tWidth)
+            Dim htGejala = MeasureHeight(graph, txtGejala, font2, tWidth)
+            Dim htDiagnosa = MeasureHeight(graph, txtDiagnosa, font2, tWidth)
+            Dim htPengobatan = MeasureHeight(graph, txtPengobatan, font2, tWidth)
+
+
             graph.DrawString("No Pendaftaran",
                          font2, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
             graph.DrawString(":",
@@ -372,37 +383,41 @@ AN",
                          font2, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
             graph.DrawString(":",
                          font2, XBrushes.Black, New XRect(x2, y, page.Width, page.Height), format)
-            graph.DrawString(DR("anamnesa").ToString,
-                         font2, XBrushes.Black, New XRect(x3, y, page.Width, page.Height), format)
-            y += l2
+            Dim tdAli = New Layout.XParagraphAlignment
+            tf.Alignment = tdAli.Justify
+
+            tf.DrawString(DR("anamnesa").ToString,
+                         font2, XBrushes.Black, New XRect(x3, y, tWidth, page.Height), XStringFormat.TopLeft)
+            y += htAnamnesa
             graph.DrawString("Gejala",
                          font2, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
             graph.DrawString(":",
                          font2, XBrushes.Black, New XRect(x2, y, page.Width, page.Height), format)
-            graph.DrawString(DR("gejala").ToString,
-                         font2, XBrushes.Black, New XRect(x3, y, page.Width, page.Height), format)
-            y += l2
+
+            tf.DrawString(DR("gejala").ToString,
+                         font2, XBrushes.Black, New XRect(x3, y, tWidth, page.Height), XStringFormat.TopLeft)
+            y += htGejala
             graph.DrawString("Diagnosa",
                          font2, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
             graph.DrawString(":",
                          font2, XBrushes.Black, New XRect(x2, y, page.Width, page.Height), format)
-            graph.DrawString(DR("diagnosa").ToString,
-                         font2, XBrushes.Black, New XRect(x3, y, page.Width, page.Height), format)
-            y += l2
+
+            tf.DrawString(DR("diagnosa").ToString,
+                         font2, XBrushes.Black, New XRect(x3, y, tWidth, page.Height), XStringFormat.TopLeft)
+            y += htDiagnosa
             graph.DrawString("Pengobatan",
                          font2, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
             graph.DrawString(":",
                          font2, XBrushes.Black, New XRect(x2, y, page.Width, page.Height), format)
-            graph.DrawString(DR("pengobatan").ToString,
-                         font2, XBrushes.Black, New XRect(x3, y, page.Width, page.Height), format)
-            y += l2
 
+            tf.DrawString(DR("pengobatan").ToString,
+                         font2, XBrushes.Black, New XRect(x3, y, tWidth, page.Height), XStringFormat.TopLeft)
+            y += htPengobatan
             graph.DrawString("Keterangan",
                          font2, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
             graph.DrawString(":",
                          font2, XBrushes.Black, New XRect(x2, y, page.Width, page.Height), format)
-            Dim tdAli = New Layout.XParagraphAlignment
-            tf.Alignment = tdAli.Justify
+
 
             tf.DrawString(DR("ket").ToString,
                          font2, XBrushes.Black, New XRect(x3, y, tWidth, page.Height), XStringFormat.TopLeft)
@@ -420,24 +435,51 @@ AN",
         q = XUnit.FromCentimeter(1)
         Dim font1 = New XFont("Times", 14)
         Dim fontH1 = New XFont("Times", 18, XFontStyle.Bold)
-        Dim fontH2 = New XFont("Times", 9, XFontStyle.Bold)
+
+        Dim f1 = New XFont("Times", 12)
+        Dim f2 = New XFont("Times", 12, XFontStyle.Bold Or XFontStyle.Underline)
 
         x = 0
-        y = y + (q * 1)
+        'y = y + (q * 1)
         Dim l1 As Double = font1.Height
         Dim lH1 As Double = fontH1.Height
+        Dim lf1 As Double = f1.Height
+        Dim lf2 As Double = f2.Height
         Dim format = New XStringFormat()
 
         w = page.Width
+        h = page.Height
+        Dim width = w / 3
+
+
+        Dim tf = New Layout.XTextFormatter(graph)
+        Dim tdAli = New Layout.XParagraphAlignment
+        tf.Alignment = tdAli.Justify
+
+        Dim txtTTD = "Kepala Bidang Kesehatan Hewan dan Kesehatan Masyarakat Veteriner,"
+        Dim txtNama = "Drh. BURHANUDDIN HARAHAP"
+        Dim txtNIP = "NIP. 19780405 200902 1 005"
+
+        Dim htTTD = MeasureHeight(graph, txtTTD, f1, width)
+
+        w = page.Width
         format.Alignment = XStringAlignment.Center
-        graph.DrawString("PUSAT KESEHATAN HEWAN (PUSKESWAN)",
-                         font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
-        y += l1
-        graph.DrawString("DINAS PERTANIAN PETERNAKAN DAN PERKEBUMAN",
-                         font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
-        y += l1
-        graph.DrawString("KOTA PALOPO",
-                         font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
+        'graph.DrawString("PUSAT KESEHATAN HEWAN (PUSKESWAN)",font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
+        'y += l1
+        'graph.DrawString("DINAS PERTANIAN PETERNAKAN DAN PERKEBUNAN", font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
+        'y += l1
+        'graph.DrawString("KOTA PALOPO", font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
+        y += (q * 2)
+
+
+        tf.DrawString(txtTTD, f1, XBrushes.Black, New XRect(w - width - (q * 1), y, width, htTTD + 5), XStringFormat.TopLeft)
+        y += htTTD * 3
+        format.Alignment = XStringAlignment.Near
+        graph.DrawString(txtNama,
+                         f2, XBrushes.Black, New XRect(w - width - (q * 1), y, width, lf2 + 5), format)
+        y += lf2
+        graph.DrawString(txtNIP,
+                         f1, XBrushes.Black, New XRect(w - width - (q * 1), y, width, lf1 + 5), format)
 
     End Sub
 

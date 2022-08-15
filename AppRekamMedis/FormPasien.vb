@@ -164,7 +164,7 @@ Public Class FormPasien
 
             FormPaseinEdit.Close()
         Catch ex As Exception
-
+            MsgBox(ex.ToString)
         End Try
     End Sub
 
@@ -202,19 +202,19 @@ Public Class FormPasien
         DG.Columns(7).MinimumWidth = 100
 
 
-        DG.Columns(1).HeaderText = "No KTP"
+        DG.Columns(1).HeaderText = "NIK"
         DG.Columns(2).HeaderText = "Nama Pemilik"
         DG.Columns(3).HeaderText = "Nama Hewan"
-        DG.Columns(4).HeaderText = "Jenis Hewan"
+        DG.Columns(4).HeaderText = "Jenis Hewan dan Ras"
         DG.Columns(5).HeaderText = "Jenis Kelamin Hewan"
-        DG.Columns(6).HeaderText = "Alamat"
+        DG.Columns(6).HeaderText = "Alamat Lengkap"
         DG.Columns(7).HeaderText = "No Telepon"
 
         DG.Columns(0).Width = widthClm * 2
         DG.Columns(1).Width = widthClm * 3
         DG.Columns(2).Width = widthClm * 4
         DG.Columns(3).Width = widthClm * 2
-        DG.Columns(4).Width = widthClm
+        DG.Columns(4).Width = widthClm * 2
         DG.Columns(5).Width = widthClm
         DG.Columns(6).Width = widthClm * 5
         DG.Columns(7).Width = widthClm * 2
@@ -257,7 +257,7 @@ Public Class FormPasien
 
         Call pdfHeader()
         Call pdfBody()
-        'Call pdfFooter()
+        Call pdfFooter()
 
         Try
             Dim pdfFilename As String = "DataPasien.pdf"
@@ -285,6 +285,7 @@ Public Class FormPasien
     End Sub
 
     Sub pdfHeader()
+        'Dim logoPath = db.appPath & "\logo.png"
         Dim logoPath = db.appPath & "\logo.png"
         Dim image As XImage = XImage.FromFile(logoPath)
         q = XUnit.FromCentimeter(1)
@@ -309,7 +310,7 @@ Public Class FormPasien
         graph.DrawString("PEMERINTAH KOTA PALOPO",
                          font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
         y += l1
-        graph.DrawString("DINAS PERTANIAN PETERNAKAN DAN PERKEBUMAN",
+        graph.DrawString("DINAS PERTANIAN PETERNAKAN DAN PERKEBUNAN",
                          font1, XBrushes.Black, New XRect(x, y, page.Width, page.Height), format)
         y += l1
         graph.DrawString("PUSKESWAN PALOPO",
@@ -346,11 +347,11 @@ Public Class FormPasien
         Dim el2_width = mEl * 6
         Dim el3_width = mEl * 9
         Dim el4_width = mEl * 12
-        Dim el5_width = mEl * 6
-        Dim el6_width = mEl * 6
+        Dim el5_width = mEl * 8
+        Dim el6_width = mEl * 7
         Dim el7_width = mEl * 6
-        Dim el8_width = mEl * 15
-        Dim el9_width = mEl * 8
+        Dim el8_width = mEl * 13
+        Dim el9_width = mEl * 7
 
         'page structure options
         Dim lineHeight = 20
@@ -375,7 +376,7 @@ Public Class FormPasien
         Dim rect_style2 = New XSolidBrush(XColors.DarkGreen)
         Dim rect_style3 = New XSolidBrush(XColors.Red)
         Dim d = 0
-        Dim i = 0
+        Dim i = 1
         Dim n As Boolean = False
 
         db.koneksi()
@@ -383,6 +384,7 @@ Public Class FormPasien
         Dim DA As New SqlDataAdapter(query, db.konek)
         Dim DS As New DataSet
         DA.Fill(DS)
+
 
         Dim pen2 = New XPen(XColors.Black, 1)
         graph.DrawRectangle(rect_style2, marginLeft, marginTop, w - 2 * marginLeft, rectH_height)
@@ -405,7 +407,7 @@ Public Class FormPasien
                               New XRect(marginLeft + offSetX_1, marginTop + (rect_height / 2), el2_width, el_height), format)
         graph.DrawString("Pendaftaran", fontParagraph, XBrushes.White,
                               New XRect(marginLeft + offSetX_1, marginTop + rect_height + (rect_height / 2), el2_width, el_height), format)
-        graph.DrawString("No KTP", fontParagraph, XBrushes.White,
+        graph.DrawString("NIK", fontParagraph, XBrushes.White,
                               New XRect(marginLeft + offSetX_2, marginTop + rect_height, el3_width, el_height), format)
         graph.DrawString("Nama Pemilik", fontParagraph, XBrushes.White,
                               New XRect(marginLeft + offSetX_3, marginTop + rect_height, el4_width, el_height), format)
@@ -428,20 +430,45 @@ Public Class FormPasien
         graph.DrawString("No Telepon", fontParagraph, XBrushes.White,
                               New XRect(marginLeft + offSetX_8, marginTop + rect_height, el9_width, el_height), format)
 
+        Dim dist_Y = 0
         For Each row As DataRow In DS.Tables(0).Rows
-            Dim dist_Y = lineHeight * (d)
-            Dim dist_Y2 = dist_Y
-            y = dist_Y2
             pen2 = New XPen(XColors.Black, 1)
 
             Dim tf = New Layout.XTextFormatter(graph)
+
+            Dim txtNamaHewan = row("namaHewan").ToString
+            Dim txtjenisHewan = row("jenisHewan").ToString
+            Dim txtalamat = row("alamat").ToString
+
+            Dim htNamaHewan = MeasureHeight(graph, txtNamaHewan, fontMini, el5_width)
+            Dim htjenisHewan = MeasureHeight(graph, txtjenisHewan, fontMini, el6_width)
+            Dim htalamat = MeasureHeight(graph, txtalamat, fontMini, el8_width)
+
+            If htNamaHewan > htjenisHewan And htNamaHewan > htalamat Then
+                el_height = htNamaHewan + 5
+            End If
+
+            If htNamaHewan < htjenisHewan And htjenisHewan > htalamat Then
+                el_height = htjenisHewan + 5
+            End If
+
+            If htalamat > htjenisHewan And htNamaHewan < htalamat Then
+                el_height = htalamat + 5
+            End If
+
+
+            Dim dist_Y2 = dist_Y
+            y = dist_Y2
+
+            Dim tdAli = New Layout.XParagraphAlignment
+            tf.Alignment = tdAli.Left
 
             format.LineAlignment = XLineAlignment.Center
 
             'ELEMENT 1 - SMALL 80
             graph.DrawString(
                             " " & i & ".",
-                            fontParagraph,
+                            fontMini,
                             XBrushes.Black,
                             New XRect(marginLeft, marginTop + rectH_height + dist_Y, el1_width, el_height),
                             format)
@@ -449,38 +476,37 @@ Public Class FormPasien
             'ELEMENT 2 - BIG 380
             graph.DrawString(
                         row("idPasien").ToString,
-                        fontParagraph,
+                        fontMini,
                         XBrushes.Black,
                         New XRect(marginLeft + offSetX_1, marginTop + rectH_height + dist_Y, el2_width, el_height),
                         format)
             'ELEMENT 3 - SMALL 80
             graph.DrawString(
             row("noKTP").ToString,
-                        fontParagraph,
+                        fontMini,
                         XBrushes.Black,
                         New XRect(marginLeft + offSetX_2, marginTop + rectH_height + dist_Y, el3_width, el_height),
                         format)
             graph.DrawString(
             row("nama").ToString,
-                        fontParagraph,
+                        fontMini,
                         XBrushes.Black,
                         New XRect(marginLeft + offSetX_3, marginTop + rectH_height + dist_Y, el4_width, el_height),
                         format)
-            graph.DrawString(
-            row("namaHewan").ToString,
-                        fontParagraph,
-                        XBrushes.Black,
-                        New XRect(marginLeft + offSetX_4, marginTop + rectH_height + dist_Y, el5_width, el_height),
-                        format)
-            graph.DrawString(
-            row("jenisHewan").ToString,
-                        fontParagraph,
-                        XBrushes.Black,
-                        New XRect(marginLeft + offSetX_5, marginTop + rectH_height + dist_Y, el6_width, el_height),
-                        format)
+            tf.DrawString(
+                row("namaHewan").ToString,
+                         fontMini,
+                XBrushes.Black,
+                New XRect(marginLeft + offSetX_4 + 2, marginTop + rectH_height + dist_Y + 2, el5_width, el_height), XStringFormat.TopLeft)
+            tf.DrawString(
+                row("jenisHewan").ToString,
+                         fontMini,
+                XBrushes.Black,
+                New XRect(marginLeft + offSetX_5 + 2, marginTop + rectH_height + dist_Y + 2, el6_width, el_height), XStringFormat.TopLeft)
+
             graph.DrawString(
             row("jkHewan").ToString,
-                        fontParagraph,
+                        fontMini,
                         XBrushes.Black,
                         New XRect(marginLeft + offSetX_6, marginTop + rectH_height + dist_Y, el7_width, el_height),
                         format)
@@ -488,60 +514,107 @@ Public Class FormPasien
                 row("alamat").ToString,
                             fontMini,
                             XBrushes.Black,
-                            New XRect(marginLeft + offSetX_7 + 2, marginTop + rectH_height + dist_Y, el8_width, el_height),
+                            New XRect(marginLeft + offSetX_7 + 2, marginTop + rectH_height + dist_Y + 2, el8_width, el_height),
                             XStringFormat.TopLeft)
             graph.DrawString(
                 row("noTelepon").ToString,
-                            fontParagraph,
+                            fontMini,
                             XBrushes.Black,
                             New XRect(marginLeft + offSetX_8, marginTop + rectH_height + dist_Y, el9_width, el_height),
                             format)
 
             pen2 = New XPen(XColors.Black, 1)
-            graph.DrawLine(pen2, marginLeft, marginTop + rectH_height + dist_Y, marginLeft, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft + offSetX_1, marginTop + rectH_height + dist_Y, marginLeft + offSetX_1, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft + offSetX_2, marginTop + rectH_height + dist_Y, marginLeft + offSetX_2, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft + offSetX_3, marginTop + rectH_height + dist_Y, marginLeft + offSetX_3, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft + offSetX_4, marginTop + rectH_height + dist_Y, marginLeft + offSetX_4, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft + offSetX_5, marginTop + rectH_height + dist_Y, marginLeft + offSetX_5, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft + offSetX_6, marginTop + rectH_height + dist_Y, marginLeft + offSetX_6, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft + offSetX_7, marginTop + rectH_height + dist_Y, marginLeft + offSetX_7, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft + offSetX_8, marginTop + rectH_height + dist_Y, marginLeft + offSetX_8, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft + offSetX_8 + el9_width, marginTop + rectH_height + dist_Y, marginLeft + offSetX_8 + el9_width, marginTop + rectH_height + dist_Y + lineHeight)
-            graph.DrawLine(pen2, marginLeft, marginTop + rectH_height + dist_Y + lineHeight, marginLeft + offSetX_8 + el9_width, marginTop + rectH_height + dist_Y + lineHeight)
+            graph.DrawLine(pen2, marginLeft, marginTop + rectH_height + dist_Y, marginLeft, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft + offSetX_1, marginTop + rectH_height + dist_Y, marginLeft + offSetX_1, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft + offSetX_2, marginTop + rectH_height + dist_Y, marginLeft + offSetX_2, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft + offSetX_3, marginTop + rectH_height + dist_Y, marginLeft + offSetX_3, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft + offSetX_4, marginTop + rectH_height + dist_Y, marginLeft + offSetX_4, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft + offSetX_5, marginTop + rectH_height + dist_Y, marginLeft + offSetX_5, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft + offSetX_6, marginTop + rectH_height + dist_Y, marginLeft + offSetX_6, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft + offSetX_7, marginTop + rectH_height + dist_Y, marginLeft + offSetX_7, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft + offSetX_8, marginTop + rectH_height + dist_Y, marginLeft + offSetX_8, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft + offSetX_8 + el9_width, marginTop + rectH_height + dist_Y, marginLeft + offSetX_8 + el9_width, marginTop + rectH_height + dist_Y + el_height)
+            graph.DrawLine(pen2, marginLeft, marginTop + rectH_height + dist_Y + el_height, marginLeft + offSetX_8 + el9_width, marginTop + rectH_height + dist_Y + el_height)
 
             If n = True Then
                 n = False
                 graph.DrawLine(pen2, marginLeft, marginTop + rectH_height + dist_Y, marginLeft + offSetX_8 + el9_width, marginTop + rectH_height + dist_Y)
             End If
-            If (dist_Y + rectH_height + lineHeight + marginTop) > (h - q) Then
+            If (dist_Y + rectH_height + lineHeight + marginTop) > (h - q - 10) Then
                 Call createPage()
                 d = 1
-                marginTop = q - (lineHeight * 4)
+                dist_Y = 0
+                marginTop = -14 ' - (lineHeight * 4)
                 n = True
             Else
                 d += 1
+
+                dist_Y += el_height
+
             End If
 
             i += 1
+            y = dist_Y + rectH_height + lineHeight + marginTop
         Next
 
     End Sub
 
     Sub pdfFooter()
+        Dim format = New XStringFormat
         q = XUnit.FromCentimeter(1)
-        Dim font1 = New XFont("Times", 12)
-        Dim fontH1 = New XFont("Times", 18, XFontStyle.Bold)
-        Dim fontH2 = New XFont("Times", 9, XFontStyle.Bold)
+
+        Dim f1 = New XFont("Times", 12)
+        Dim f2 = New XFont("Times", 12, XFontStyle.Bold Or XFontStyle.Underline)
 
         x = 0
-        y = y + (q * 1.5)
-        Dim l1 As Double = font1.Height
-        Dim lH1 As Double = fontH1.Height
-        Dim format = New XStringFormat()
+        y += (q * 2)
+        Dim lf1 As Double = f1.Height
+        Dim lf2 As Double = f2.Height
 
         w = page.Width
+        h = page.Height
+        Dim width = w / 5
+
+
+        Dim tf = New Layout.XTextFormatter(graph)
+        Dim tdAli = New Layout.XParagraphAlignment
+        tf.Alignment = tdAli.Justify
+
+        Dim txtTTD = "Kepala Seksi Pengendalian dan pencegahan penyakit hewan,"
+        Dim txtNama = "Drh. RAHMI, S.KH."
+        Dim txtNIP = "NIP. 19830410 201101 2 041"
+
+        Dim htTTD = MeasureHeight(graph, txtTTD, f1, width)
+
+        If (h - q) < (y + (htTTD * 4)) Then
+            Call createPage()
+            y = q * 2
+        End If
+
+        tf.DrawString(txtTTD, f1, XBrushes.Black, New XRect(w - width - (q * 1), y, width, htTTD + 5), XStringFormat.TopLeft)
+        y += htTTD * 3
+        Format.Alignment = XStringAlignment.Near
+        graph.DrawString(txtNama,
+                         f2, XBrushes.Black, New XRect(w - width - (q * 1), y, width, lf2 + 5), format)
+        y += lf2
+        graph.DrawString(txtNIP,
+                         f1, XBrushes.Black, New XRect(w - width - (q * 1), y, width, lf1 + 5), format)
     End Sub
+
+    Private Function MeasureHeight(gfx As XGraphics, text As String, font As XFont, width As Integer) As Double
+        Dim lines = text.Split(vbLf)
+        Dim totalHeight As Double = 0
+        Dim x = 0
+        For Each line As String In lines
+            Console.WriteLine(line)
+            Dim size = gfx.MeasureString(line, font)
+            Dim height As Double = size.Height + (size.Height * Math.Floor(size.Width / width))
+            totalHeight += height
+
+            Console.WriteLine(size.Height & "*" & size.Width & "/" & width & "=" & height & "-" & totalHeight)
+        Next
+        Return totalHeight
+    End Function
 
     Private Sub DG_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DG.CellClick
         btnEdit.Visible = True

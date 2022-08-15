@@ -13,7 +13,7 @@ Public Class Database
             konek = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & appPath & "\dbRekamMedis.mdf;Integrated Security=True")
             konek.Open()
 
-            'MsgBox("Database berhasil terkoneksi in" & appPath & "--" & appDataPath, MsgBoxStyle.Information, "Konfirmasi")
+            'MsgBox("Database berhasil terkoneksi in" & appPath, MsgBoxStyle.Information, "Konfirmasi")
         Catch ex As Exception
             MsgBox("Koneksi database gagal" + ex.Message, MsgBoxStyle.Critical, "error")
         End Try

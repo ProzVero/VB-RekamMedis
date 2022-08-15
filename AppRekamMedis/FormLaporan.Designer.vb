@@ -87,7 +87,7 @@ Partial Class FormLaporan
         Me.DG2.AutoGenerateColumns = False
         Me.DG2.BackgroundColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Indigo
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -193,7 +193,7 @@ Partial Class FormLaporan
         Me.DG1.AutoGenerateColumns = False
         Me.DG1.BackgroundColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Navy
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Indigo
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -389,7 +389,7 @@ Partial Class FormLaporan
         '
         'pnlLaporan
         '
-        Me.pnlLaporan.BackColor = System.Drawing.Color.Sienna
+        Me.pnlLaporan.BackColor = System.Drawing.Color.DarkMagenta
         Me.pnlLaporan.Controls.Add(Me.DG2)
         Me.pnlLaporan.Controls.Add(Me.DG1)
         Me.pnlLaporan.Controls.Add(Me.btnPrint)

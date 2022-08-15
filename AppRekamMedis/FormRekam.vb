@@ -49,7 +49,7 @@ Public Class FormRekam
     End Sub
     Private Sub FormRekam_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DbRekamMedisDataSet1.rekam' table. You can move, or remove it, as needed.
-        Me.RekamTableAdapter1.Fill(Me.DbRekamMedisDataSet1.rekam)
+        'Me.RekamTableAdapter1.Fill(Me.DbRekamMedisDataSet1.rekam)
         'TODO: This line of code loads data into the 'DbRekamMedisDataSet1.rekam' table. You can move, or remove it, as needed.
         'Me.RekamTableAdapter.Fill(Me.DbRekamMedisDataSet1.rekam)
         Call setLocation()
@@ -125,7 +125,7 @@ Public Class FormRekam
 
             FormRekamOlah.Close()
         Catch ex As Exception
-
+            MsgBox(ex.ToString)
         End Try
     End Sub
 
@@ -153,7 +153,7 @@ Public Class FormRekam
     Sub FormatGrid()
         Dim widthDG = DG.Width
 
-        Dim widthClm As Integer = Fix((widthDG - 50) / 16)
+        Dim widthClm As Integer = Fix((widthDG - 50) / 22)
 
         DG.Columns(0).MinimumWidth = 100
         DG.Columns(1).MinimumWidth = 100
@@ -166,15 +166,15 @@ Public Class FormRekam
         DG.Columns(3).HeaderText = "Gejala"
         DG.Columns(4).HeaderText = "Diagnosa"
         DG.Columns(5).HeaderText = "Pengobatan"
-        DG.Columns(6).HeaderText = "Keterangan"
+        DG.Columns(6).HeaderText = "Ket.(Drh./Paravet)"
 
         DG.Columns(0).Width = widthClm * 2
         DG.Columns(1).Width = widthClm * 2
-        DG.Columns(2).Width = widthClm * 2
-        DG.Columns(3).Width = widthClm * 2
-        DG.Columns(4).Width = widthClm * 2
-        DG.Columns(5).Width = widthClm * 2
-        DG.Columns(6).Width = widthClm * 4
+        DG.Columns(2).Width = widthClm * 4
+        DG.Columns(3).Width = widthClm * 4
+        DG.Columns(4).Width = widthClm * 4
+        DG.Columns(5).Width = widthClm * 4
+        DG.Columns(6).Width = widthClm * 3
         'MsgBox("'" & widthDG & "'- '" & widthClm & "'")
     End Sub
 
@@ -228,7 +228,7 @@ Public Class FormRekam
 
         Call pdfHeader()
         Call pdfBody()
-        'Call pdfFooter()
+        Call pdfFooter()
 
         Try
             Dim pdfFilename As String = "DataRekamMedis.pdf"
@@ -397,28 +397,47 @@ Public Class FormRekam
                               New XRect(marginLeft + offSetX_8, marginTop + rect_height, el9_width, el_height), format)
         Dim dist_Y As Double = 0.0
         For Each row As DataRow In DS.Tables(0).Rows
-
-
             pen2 = New XPen(XColors.Black, 1)
-
 
             Dim tf = New Layout.XTextFormatter(graph)
 
+            Dim txt = row("ket").ToString
+            Dim tfHeight = MeasureHeight(graph, txt, fontMini, el8_width)
+
+            Dim txtAnamnesa = row("anamnesa").ToString
+            Dim txtGejala = row("gejala").ToString
+            Dim txtDiagnosa = row("diagnosa").ToString
+            Dim txtPengobatan = row("pengobatan").ToString
+
+            Dim htAnamnesa = MeasureHeight(graph, txtAnamnesa, fontMini, el4_width)
+            Dim htGejala = MeasureHeight(graph, txtGejala, fontMini, el5_width)
+            Dim htDiagnosa = MeasureHeight(graph, txtDiagnosa, fontMini, el6_width)
+            Dim htPengobatan = MeasureHeight(graph, txtPengobatan, fontMini, el7_width)
+
             format.LineAlignment = XLineAlignment.Center
 
-            Dim txt = row("ket").ToString
-
-            Dim newHeight = MeasureHeight(graph, txt, fontMini, el8_width - 4)
-            If newHeight > 20 Then
-                el_height = newHeight + 3
-            Else
-                el_height = 20 + 3
+            If htAnamnesa > htGejala And htAnamnesa > htDiagnosa And htAnamnesa > htPengobatan Then
+                el_height = htAnamnesa + 5
             End If
 
+            If htAnamnesa < htGejala And htGejala > htDiagnosa And htGejala > htPengobatan Then
+                el_height = htGejala + 5
+            End If
+
+            If htDiagnosa > htGejala And htAnamnesa < htDiagnosa And htDiagnosa > htPengobatan Then
+                el_height = htDiagnosa + 5
+            End If
+
+            If htPengobatan > htGejala And htPengobatan > htDiagnosa And htAnamnesa < htPengobatan Then
+                el_height = htPengobatan + 5
+            End If
+
+            Dim tdAli = New Layout.XParagraphAlignment
+            tf.Alignment = tdAli.Left
 
             graph.DrawString(
                             " " & i & ".",
-                            fontParagraph,
+                            fontMini,
                             XBrushes.Black,
                             New XRect(marginLeft, marginTop + rectH_height + dist_Y, el1_width, el_height),
                             format)
@@ -426,43 +445,38 @@ Public Class FormRekam
 
             graph.DrawString(
                         row("idRekam").ToString,
-                        fontParagraph,
+                        fontMini,
                         XBrushes.Black,
                         New XRect(marginLeft + offSetX_1, marginTop + rectH_height + dist_Y, el2_width, el_height),
                         format)
 
             graph.DrawString(
                         row("idPasien").ToString,
-                        fontParagraph,
+                        fontMini,
                         XBrushes.Black,
                         New XRect(marginLeft + offSetX_2, marginTop + rectH_height + dist_Y, el3_width, el_height),
                         format)
-            graph.DrawString(
-            row("anamnesa").ToString,
-                        fontParagraph,
-                        XBrushes.Black,
-                        New XRect(marginLeft + offSetX_3, marginTop + rectH_height + dist_Y, el4_width, el_height),
-                        format)
-            graph.DrawString(
-            row("gejala").ToString,
-                        fontParagraph,
-                        XBrushes.Black,
-                        New XRect(marginLeft + offSetX_4, marginTop + rectH_height + dist_Y, el5_width, el_height),
-                        format)
-            graph.DrawString(
-            row("diagnosa").ToString,
-                        fontParagraph,
-                        XBrushes.Black,
-                        New XRect(marginLeft + offSetX_5, marginTop + rectH_height + dist_Y, el6_width, el_height),
-                        format)
-            graph.DrawString(
-            row("pengobatan").ToString,
-                        fontParagraph,
-                        XBrushes.Black,
-                        New XRect(marginLeft + offSetX_6, marginTop + rectH_height + dist_Y, el7_width, el_height),
-                        format)
-            Dim tdAli = New Layout.XParagraphAlignment
-            tf.Alignment = tdAli.Justify
+            tf.DrawString(
+                row("anamnesa").ToString,
+                         fontMini,
+                XBrushes.Black,
+                New XRect(marginLeft + offSetX_3 + 2, marginTop + rectH_height + dist_Y + 2, el4_width, el_height), XStringFormat.TopLeft)
+            tf.DrawString(
+                row("gejala").ToString,
+                         fontMini,
+                XBrushes.Black,
+                New XRect(marginLeft + offSetX_4 + 2, marginTop + rectH_height + dist_Y + 2, el5_width, el_height), XStringFormat.TopLeft)
+            tf.DrawString(
+                row("diagnosa").ToString,
+                         fontMini,
+                XBrushes.Black,
+                New XRect(marginLeft + offSetX_5 + 2, marginTop + rectH_height + dist_Y + 2, el6_width, el_height), XStringFormat.TopLeft)
+            tf.DrawString(
+                row("pengobatan").ToString,
+                         fontMini,
+                XBrushes.Black,
+                New XRect(marginLeft + offSetX_6 + 2, marginTop + rectH_height + dist_Y + 2, el7_width, el_height), XStringFormat.TopLeft)
+
             tf.DrawString(
                     row("ket").ToString,
                             fontMini,
@@ -470,17 +484,24 @@ Public Class FormRekam
                             New XRect(marginLeft + offSetX_7 + 2, marginTop + rectH_height + dist_Y, el8_width - 4, el_height),
                             XStringFormat.TopLeft)
 
-            Dim dtDateTime As DateTime = New DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc)
-            Dim value As Long
-            value = Convert.ToInt64((row("tgl").ToString))
-            dtDateTime = dtDateTime.AddMilliseconds(value).ToLocalTime()
+            'Dim dtDateTime As DateTime = New DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc)
+            'Dim value As Long
+            'value = Convert.ToInt64((row("tgl").ToString))
+            'dtDateTime = dtDateTime.AddMilliseconds(value).ToLocalTime()
 
+            'graph.DrawString(
+            'dtDateTime.ToString("dd/MM/yyyy HH:mm"),
+            'fontMini,
+            'XBrushes.Black,
+            ' New XRect(marginLeft + offSetX_8, marginTop + rectH_height + dist_Y, el9_width, el_height),
+            'format)
             graph.DrawString(
-                dtDateTime.ToString("dd/MM/yyyy HH:mm"),
-                            fontParagraph,
-                            XBrushes.Black,
-                            New XRect(marginLeft + offSetX_8, marginTop + rectH_height + dist_Y, el9_width, el_height),
-                            format)
+            row("tgl").ToString,
+                        fontMini,
+                        XBrushes.Black,
+                        New XRect(marginLeft + offSetX_8, marginTop + rectH_height + dist_Y, el9_width, el_height),
+                        format)
+
 
             pen2 = New XPen(XColors.Black, 1)
             graph.DrawLine(pen2, marginLeft, marginTop + rectH_height + dist_Y, marginLeft, marginTop + rectH_height + dist_Y + el_height)
@@ -502,7 +523,8 @@ Public Class FormRekam
             If (dist_Y + rectH_height + el_height + marginTop) > (h - q) Then
                 Call createPage()
                 d = 1
-                marginTop = q - (el_height * 4)
+                dist_Y = 0
+                marginTop = -14 ' - (lineHeight * 4)
                 n = True
             Else
                 d += 1
@@ -510,8 +532,54 @@ Public Class FormRekam
 
             i += 1
             dist_Y += el_height
+            y = dist_Y + rectH_height + el_height + marginTop
+            'Console.WriteLine(dist_Y)
+            'Console.WriteLine(y)
         Next
 
+    End Sub
+
+    Sub pdfFooter()
+        q = XUnit.FromCentimeter(1)
+        Dim c = q * 4
+        Dim a = y + c
+        Dim b = h - q
+        If a > b Then
+            Call createPage()
+            y = q * 1
+        End If
+        w = page.Width
+        h = page.Height
+        Dim width = w / 5
+        Dim format = New XStringFormat
+
+        Dim f1 = New XFont("Times", 12)
+        Dim f2 = New XFont("Times", 12, XFontStyle.Bold Or XFontStyle.Underline)
+        Dim txtTTD = "Kepala Seksi Pengendalian dan pencegahan penyakit hewan,"
+        Dim txtNama = "Drh. RAHMI, S.KH."
+        Dim txtNIP = "NIP. 19830410 201101 2 041"
+
+        Dim htTTD = MeasureHeight(graph, txtTTD, f1, width)
+
+        x = 0
+        Dim lf1 As Double = f1.Height
+        Dim lf2 As Double = f2.Height
+
+
+
+        Dim tf = New Layout.XTextFormatter(graph)
+        Dim tdAli = New Layout.XParagraphAlignment
+        tf.Alignment = tdAli.Justify
+
+
+        tf.DrawString(txtTTD, f1, XBrushes.Black, New XRect(w - width - (q * 1), y, width, htTTD + 5), XStringFormat.TopLeft)
+        y += htTTD * 3
+        format.Alignment = XStringAlignment.Near
+        graph.DrawString(txtNama,
+                         f2, XBrushes.Black, New XRect(w - width - (q * 1), y, width, lf2 + 5), format)
+        y += lf2
+        graph.DrawString(txtNIP,
+                         f1, XBrushes.Black, New XRect(w - width - (q * 1), y, width, lf1 + 5), format)
     End Sub
 
     Private Function MeasureHeight(gfx As XGraphics, text As String, font As XFont, width As Integer) As Double
@@ -519,12 +587,12 @@ Public Class FormRekam
         Dim totalHeight As Double = 0
         Dim x = 0
         For Each line As String In lines
-            Console.WriteLine(line)
+            ' Console.WriteLine(line)
             Dim size = gfx.MeasureString(line, font)
             Dim height As Double = size.Height + (size.Height * Math.Floor(size.Width / width))
             totalHeight += height
 
-            Console.WriteLine(size.Height & "*" & size.Width & "/" & width & "=" & height & "-" & totalHeight)
+            'Console.WriteLine(size.Height & "*" & size.Width & "/" & width & "=" & height & "-" & totalHeight)
         Next
         Return totalHeight
     End Function

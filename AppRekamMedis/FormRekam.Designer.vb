@@ -75,7 +75,7 @@ Partial Class FormRekam
         Me.DG.AutoGenerateColumns = False
         Me.DG.BackgroundColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Indigo
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -257,7 +257,7 @@ Partial Class FormRekam
         '
         'pnlRekam
         '
-        Me.pnlRekam.BackColor = System.Drawing.Color.Sienna
+        Me.pnlRekam.BackColor = System.Drawing.Color.DarkMagenta
         Me.pnlRekam.Controls.Add(Me.btnHapus)
         Me.pnlRekam.Controls.Add(Me.btnEdit)
         Me.pnlRekam.Controls.Add(Me.btnPrint)

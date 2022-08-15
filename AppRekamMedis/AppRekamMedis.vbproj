@@ -270,6 +270,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>dbRekamMedis.mdf</DependentUpon>
     </Content>
+    <None Include="Res\logou.png" />
     <None Include="Res\RM2.png" />
     <None Include="Res\RM1.png" />
     <None Include="Res\pasien.png" />
@@ -282,6 +283,10 @@
     <None Include="Res\3.png" />
     <None Include="Res\4.png" />
     <None Include="Res\back2.png" />
+    <None Include="Res\A.png" />
+    <None Include="Res\B.png" />
+    <None Include="Res\C.png" />
+    <None Include="Res\D.png" />
     <Content Include="Res\logo.png" />
     <None Include="Res\rekammedik.png" />
   </ItemGroup>

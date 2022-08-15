@@ -75,6 +75,7 @@ Public Class FormMain
         PictureBox2.Left = Me.Width - PictureBox2.Width - 80
         picClose.Left = Me.Width - 30
         PicMin.Left = Me.Width - 60
+        PictureBox3.Left = Me.Width - 90
         Panel1.Width = Me.Width
         pnlLogin.Left = (Me.Width - pnlLogin.Width) / 2
         pnlLogin.Top = ((Me.Height - pnlLogin.Height + 150) / 2)
@@ -83,5 +84,13 @@ Public Class FormMain
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         Call setLocation()
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Dim result As DialogResult = MessageBox.Show("Logout?", "AppRekamMedis", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            FormLogin.Show()
+            Close()
+        End If
     End Sub
 End Class

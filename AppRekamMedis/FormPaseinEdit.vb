@@ -58,27 +58,26 @@ Public Class FormPaseinEdit
         Me.Close()
     End Sub
 
-    Dim frmPasien As New FormPasien
     Private Sub btnSimpanPasien_Click(sender As Object, e As EventArgs) Handles btnSimpanPasien.Click
         Try
             If lblNoPendaftaran.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And ComboBox1.Text <> "" And TextBox7.Text <> "" And TextBox8.Text <> "" Then
                 If tambah Then
                     Dim query = "INSERT INTO Pasien (idPasien, noKtP, nama, namaHewan, jenisHewan, jkHewan, alamat, noTelepon) values
                 ('" & lblNoPendaftaran.Text & "','" & TextBox2.Text & "','" & TextBox3.Text & "','" & TextBox4.Text & "','" & TextBox5.Text & "','" & ComboBox1.Text & "','" & TextBox7.Text & "','" & TextBox8.Text & "')"
-                    Call frmPasien.Edit(query)
+                    Call FormPasien.Edit(query)
 
                 Else
                     Dim query = "UPDATE Pasien set noKtP='" & TextBox2.Text & "', nama='" & TextBox3.Text & "', 
                 namaHewan='" & TextBox4.Text & "', jenisHewan='" & TextBox5.Text & "', jkHewan='" & ComboBox1.Text & "', 
                 alamat='" & TextBox7.Text & "', noTelepon='" & TextBox8.Text & "' where idPasien='" & lblNoPendaftaran.Text & "'"
-                    Call frmPasien.Edit(query)
+                    Call FormPasien.Edit(query)
                 End If
             Else
                 MessageBox.Show("Data Belum Lengkap", "Data Pasien", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             End If
 
         Catch ex As Exception
-
+            MessageBox.Show(ex.ToString, "Data Pasien", MessageBoxButtons.OK, MessageBoxIcon.Stop)
         End Try
 
     End Sub

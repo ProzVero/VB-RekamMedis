@@ -111,7 +111,7 @@ Partial Class FormRekamOlah
         Me.btnSimpanRekam.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSimpanRekam.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSimpanRekam.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSimpanRekam.Location = New System.Drawing.Point(177, 343)
+        Me.btnSimpanRekam.Location = New System.Drawing.Point(172, 421)
         Me.btnSimpanRekam.Name = "btnSimpanRekam"
         Me.btnSimpanRekam.Size = New System.Drawing.Size(126, 40)
         Me.btnSimpanRekam.TabIndex = 27
@@ -125,9 +125,9 @@ Partial Class FormRekamOlah
         Me.Panel16.Controls.Add(Me.Label33)
         Me.Panel16.Controls.Add(Me.Label34)
         Me.Panel16.Controls.Add(Me.Label35)
-        Me.Panel16.Location = New System.Drawing.Point(17, 263)
+        Me.Panel16.Location = New System.Drawing.Point(17, 383)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(446, 74)
+        Me.Panel16.Size = New System.Drawing.Size(446, 32)
         Me.Panel16.TabIndex = 33
         '
         'TextBox7
@@ -138,10 +138,8 @@ Partial Class FormRekamOlah
         Me.TextBox7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox7.ForeColor = System.Drawing.Color.Black
         Me.TextBox7.Location = New System.Drawing.Point(226, 4)
-        Me.TextBox7.Multiline = True
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox7.Size = New System.Drawing.Size(213, 67)
+        Me.TextBox7.Size = New System.Drawing.Size(196, 22)
         Me.TextBox7.TabIndex = 3
         '
         'Label33
@@ -175,9 +173,9 @@ Partial Class FormRekamOlah
         Me.Label35.ForeColor = System.Drawing.Color.Black
         Me.Label35.Location = New System.Drawing.Point(9, 5)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(35, 19)
+        Me.Label35.Size = New System.Drawing.Size(147, 19)
         Me.Label35.TabIndex = 0
-        Me.Label35.Text = "Ket"
+        Me.Label35.Text = "Ket. (Drh./Paravet)"
         '
         'Panel7
         '
@@ -232,9 +230,9 @@ Partial Class FormRekamOlah
         Me.Panel14.Controls.Add(Me.Label27)
         Me.Panel14.Controls.Add(Me.Label28)
         Me.Panel14.Controls.Add(Me.Label29)
-        Me.Panel14.Location = New System.Drawing.Point(17, 227)
+        Me.Panel14.Location = New System.Drawing.Point(17, 317)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(446, 30)
+        Me.Panel14.Size = New System.Drawing.Size(446, 60)
         Me.Panel14.TabIndex = 30
         '
         'TextBox6
@@ -245,8 +243,10 @@ Partial Class FormRekamOlah
         Me.TextBox6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox6.ForeColor = System.Drawing.Color.Black
         Me.TextBox6.Location = New System.Drawing.Point(226, 4)
+        Me.TextBox6.Multiline = True
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(196, 22)
+        Me.TextBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox6.Size = New System.Drawing.Size(196, 53)
         Me.TextBox6.TabIndex = 3
         '
         'Label27
@@ -350,9 +350,9 @@ Partial Class FormRekamOlah
         Me.Panel13.Controls.Add(Me.Label24)
         Me.Panel13.Controls.Add(Me.Label25)
         Me.Panel13.Controls.Add(Me.Label26)
-        Me.Panel13.Location = New System.Drawing.Point(17, 191)
+        Me.Panel13.Location = New System.Drawing.Point(17, 251)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(446, 30)
+        Me.Panel13.Size = New System.Drawing.Size(446, 60)
         Me.Panel13.TabIndex = 34
         '
         'TextBox5
@@ -363,8 +363,10 @@ Partial Class FormRekamOlah
         Me.TextBox5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.ForeColor = System.Drawing.Color.Black
         Me.TextBox5.Location = New System.Drawing.Point(226, 3)
+        Me.TextBox5.Multiline = True
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(196, 22)
+        Me.TextBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox5.Size = New System.Drawing.Size(196, 54)
         Me.TextBox5.TabIndex = 3
         '
         'Label24
@@ -411,7 +413,7 @@ Partial Class FormRekamOlah
         Me.Panel11.Controls.Add(Me.Label20)
         Me.Panel11.Location = New System.Drawing.Point(17, 119)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(446, 30)
+        Me.Panel11.Size = New System.Drawing.Size(446, 60)
         Me.Panel11.TabIndex = 31
         '
         'TextBox3
@@ -422,8 +424,10 @@ Partial Class FormRekamOlah
         Me.TextBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.ForeColor = System.Drawing.Color.Black
         Me.TextBox3.Location = New System.Drawing.Point(226, 5)
+        Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(196, 22)
+        Me.TextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox3.Size = New System.Drawing.Size(196, 52)
         Me.TextBox3.TabIndex = 3
         '
         'Label18
@@ -468,9 +472,9 @@ Partial Class FormRekamOlah
         Me.Panel12.Controls.Add(Me.Label21)
         Me.Panel12.Controls.Add(Me.Label22)
         Me.Panel12.Controls.Add(Me.Label23)
-        Me.Panel12.Location = New System.Drawing.Point(17, 155)
+        Me.Panel12.Location = New System.Drawing.Point(17, 185)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(446, 30)
+        Me.Panel12.Size = New System.Drawing.Size(446, 60)
         Me.Panel12.TabIndex = 32
         '
         'TextBox4
@@ -481,8 +485,10 @@ Partial Class FormRekamOlah
         Me.TextBox4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.ForeColor = System.Drawing.Color.Black
         Me.TextBox4.Location = New System.Drawing.Point(226, 5)
+        Me.TextBox4.Multiline = True
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(196, 22)
+        Me.TextBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox4.Size = New System.Drawing.Size(196, 52)
         Me.TextBox4.TabIndex = 3
         '
         'Label21
@@ -524,7 +530,7 @@ Partial Class FormRekamOlah
         '
         Me.tgl.AutoSize = True
         Me.tgl.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tgl.Location = New System.Drawing.Point(8, 375)
+        Me.tgl.Location = New System.Drawing.Point(14, 467)
         Me.tgl.Name = "tgl"
         Me.tgl.Size = New System.Drawing.Size(40, 16)
         Me.tgl.TabIndex = 35
@@ -535,7 +541,7 @@ Partial Class FormRekamOlah
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.ClientSize = New System.Drawing.Size(480, 395)
+        Me.ClientSize = New System.Drawing.Size(480, 492)
         Me.Controls.Add(Me.tgl)
         Me.Controls.Add(Me.Panel16)
         Me.Controls.Add(Me.Panel7)

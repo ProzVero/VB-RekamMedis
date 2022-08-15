@@ -22,6 +22,7 @@ Partial Class FormPaseinEdit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPaseinEdit))
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
@@ -34,6 +35,7 @@ Partial Class FormPaseinEdit
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -65,7 +67,7 @@ Partial Class FormPaseinEdit
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.btnSimpanPasien = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Panel17.SuspendLayout()
         Me.Panel16.SuspendLayout()
         Me.Panel14.SuspendLayout()
@@ -85,7 +87,7 @@ Partial Class FormPaseinEdit
         Me.Panel17.Controls.Add(Me.Label36)
         Me.Panel17.Controls.Add(Me.Label37)
         Me.Panel17.Controls.Add(Me.Label38)
-        Me.Panel17.Location = New System.Drawing.Point(12, 296)
+        Me.Panel17.Location = New System.Drawing.Point(12, 382)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(446, 30)
         Me.Panel17.TabIndex = 25
@@ -144,9 +146,9 @@ Partial Class FormPaseinEdit
         Me.Panel16.Controls.Add(Me.Label33)
         Me.Panel16.Controls.Add(Me.Label34)
         Me.Panel16.Controls.Add(Me.Label35)
-        Me.Panel16.Location = New System.Drawing.Point(12, 260)
+        Me.Panel16.Location = New System.Drawing.Point(12, 290)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(446, 30)
+        Me.Panel16.Size = New System.Drawing.Size(446, 86)
         Me.Panel16.TabIndex = 24
         '
         'TextBox7
@@ -157,8 +159,10 @@ Partial Class FormPaseinEdit
         Me.TextBox7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox7.ForeColor = System.Drawing.Color.Black
         Me.TextBox7.Location = New System.Drawing.Point(209, 4)
+        Me.TextBox7.Multiline = True
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(196, 22)
+        Me.TextBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox7.Size = New System.Drawing.Size(196, 79)
         Me.TextBox7.TabIndex = 3
         '
         'Label33
@@ -192,9 +196,9 @@ Partial Class FormPaseinEdit
         Me.Label35.ForeColor = System.Drawing.Color.Black
         Me.Label35.Location = New System.Drawing.Point(9, 5)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(61, 19)
+        Me.Label35.Size = New System.Drawing.Size(132, 19)
         Me.Label35.TabIndex = 0
-        Me.Label35.Text = "Alamat"
+        Me.Label35.Text = "Alamat Lengkap"
         '
         'Panel14
         '
@@ -203,10 +207,21 @@ Partial Class FormPaseinEdit
         Me.Panel14.Controls.Add(Me.Label27)
         Me.Panel14.Controls.Add(Me.Label28)
         Me.Panel14.Controls.Add(Me.Label29)
-        Me.Panel14.Location = New System.Drawing.Point(12, 224)
+        Me.Panel14.Location = New System.Drawing.Point(12, 254)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(446, 30)
         Me.Panel14.TabIndex = 22
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Jantan", "Betina", "Jantan Steril", "Betina Steril"})
+        Me.ComboBox1.Location = New System.Drawing.Point(209, 2)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(159, 24)
+        Me.ComboBox1.TabIndex = 27
         '
         'Label27
         '
@@ -252,7 +267,7 @@ Partial Class FormPaseinEdit
         Me.Panel13.Controls.Add(Me.Label26)
         Me.Panel13.Location = New System.Drawing.Point(12, 188)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(446, 30)
+        Me.Panel13.Size = New System.Drawing.Size(446, 60)
         Me.Panel13.TabIndex = 24
         '
         'TextBox5
@@ -263,8 +278,10 @@ Partial Class FormPaseinEdit
         Me.TextBox5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.ForeColor = System.Drawing.Color.Black
         Me.TextBox5.Location = New System.Drawing.Point(209, 3)
+        Me.TextBox5.Multiline = True
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(196, 22)
+        Me.TextBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox5.Size = New System.Drawing.Size(196, 54)
         Me.TextBox5.TabIndex = 3
         '
         'Label24
@@ -298,9 +315,9 @@ Partial Class FormPaseinEdit
         Me.Label26.ForeColor = System.Drawing.Color.Black
         Me.Label26.Location = New System.Drawing.Point(9, 5)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(107, 19)
+        Me.Label26.Size = New System.Drawing.Size(174, 19)
         Me.Label26.TabIndex = 0
-        Me.Label26.Text = "Jenis Hewan"
+        Me.Label26.Text = "Jenis Hewan dan Ras"
         '
         'Panel12
         '
@@ -477,9 +494,9 @@ Partial Class FormPaseinEdit
         Me.Label14.ForeColor = System.Drawing.Color.Black
         Me.Label14.Location = New System.Drawing.Point(9, 5)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(72, 19)
+        Me.Label14.Size = New System.Drawing.Size(37, 19)
         Me.Label14.TabIndex = 0
-        Me.Label14.Text = "No. KTP"
+        Me.Label14.Text = "NIK"
         '
         'pnlTop
         '
@@ -565,30 +582,24 @@ Partial Class FormPaseinEdit
         Me.btnSimpanPasien.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSimpanPasien.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSimpanPasien.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSimpanPasien.Location = New System.Drawing.Point(177, 338)
+        Me.btnSimpanPasien.Location = New System.Drawing.Point(176, 418)
         Me.btnSimpanPasien.Name = "btnSimpanPasien"
         Me.btnSimpanPasien.Size = New System.Drawing.Size(126, 40)
         Me.btnSimpanPasien.TabIndex = 26
         Me.btnSimpanPasien.Text = "Simpan"
         Me.btnSimpanPasien.UseVisualStyleBackColor = False
         '
-        'ComboBox1
+        'ContextMenuStrip1
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Jantan", "Betina"})
-        Me.ComboBox1.Location = New System.Drawing.Point(209, 2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(133, 24)
-        Me.ComboBox1.TabIndex = 27
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'FormPaseinEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.ClientSize = New System.Drawing.Size(480, 395)
+        Me.ClientSize = New System.Drawing.Size(480, 470)
         Me.Controls.Add(Me.btnSimpanPasien)
         Me.Controls.Add(Me.Panel17)
         Me.Controls.Add(Me.Panel16)
@@ -670,4 +681,5 @@ Partial Class FormPaseinEdit
     Friend WithEvents btnSimpanPasien As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class

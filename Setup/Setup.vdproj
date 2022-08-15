@@ -39,26 +39,38 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D23C362643C045749B1F637DCD425AEB"
+        "MsmKey" = "8:_A5AFAA40A3FB4266AE4E531F3ACED917"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_FDA82CF9709242859AB72CD92FB130AE"
+        "MsmKey" = "8:_B1D541B4750E4E97940C5AF611736A84"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3CE77B0D0E009CA7A99300DA6F4CB03F"
+        "MsmKey" = "8:_E5B51E0F1BDA4A2CB34AD63E71FB6A84"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FC9AA997676743DBA6A0AA0FB6F5B0AE"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_9C732A1E29C84AAA9739F8B19AE81586"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3CE77B0D0E009CA7A99300DA6F4CB03F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -79,6 +91,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -152,11 +180,6 @@
             "AssemblyAsmDisplayName" = "8:PdfSharp, Version=1.51.5185.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3CE77B0D0E009CA7A99300DA6F4CB03F"
-                    {
-                    "Name" = "8:PdfSharp.DLL"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:PdfSharp.DLL"
             "TargetName" = "8:"
@@ -247,9 +270,29 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D23C362643C045749B1F637DCD425AEB"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A5AFAA40A3FB4266AE4E531F3ACED917"
             {
-            "SourcePath" = "8:..\\AppRekamMedis\\bin\\Release\\dbRekamMedis_log.ldf"
+            "SourcePath" = "8:..\\AppRekamMedis\\Res\\logo.png"
+            "TargetName" = "8:logo.png"
+            "Tag" = "8:"
+            "Folder" = "8:_717049DDF8944A0D8824DB9ED594208D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B1D541B4750E4E97940C5AF611736A84"
+            {
+            "SourcePath" = "8:..\\AppRekamMedis\\dbRekamMedis_log.ldf"
             "TargetName" = "8:dbRekamMedis_log.ldf"
             "Tag" = "8:"
             "Folder" = "8:_717049DDF8944A0D8824DB9ED594208D"
@@ -267,10 +310,30 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FDA82CF9709242859AB72CD92FB130AE"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E5B51E0F1BDA4A2CB34AD63E71FB6A84"
             {
-            "SourcePath" = "8:..\\AppRekamMedis\\bin\\Release\\dbRekamMedis.mdf"
+            "SourcePath" = "8:..\\AppRekamMedis\\dbRekamMedis.mdf"
             "TargetName" = "8:dbRekamMedis.mdf"
+            "Tag" = "8:"
+            "Folder" = "8:_717049DDF8944A0D8824DB9ED594208D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FC9AA997676743DBA6A0AA0FB6F5B0AE"
+            {
+            "SourcePath" = "8:..\\AppRekamMedis\\bin\\Release\\PdfSharp.xml"
+            "TargetName" = "8:PdfSharp.xml"
             "Tag" = "8:"
             "Folder" = "8:_717049DDF8944A0D8824DB9ED594208D"
             "Condition" = "8:"
@@ -355,7 +418,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:App Rekam Medis"
         "ProductCode" = "8:{911E957B-4634-4355-8643-A80297879A1D}"
-        "PackageCode" = "8:{E9378301-A870-45AA-99C4-F1F78F51EA67}"
+        "PackageCode" = "8:{627CBA6B-457A-422A-8A7E-6BDDED1D5312}"
         "UpgradeCode" = "8:{F6D088AC-C0B7-474B-8ACE-D57B3687C8B5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -37,6 +37,14 @@ Partial Class FormPasien
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnlPasien = New System.Windows.Forms.Panel()
         Me.DG = New System.Windows.Forms.DataGridView()
+        Me.IdPasienDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NoKTPDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaHewanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JenisHewanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JkHewanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AlamatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NoTeleponDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PasienBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbRekamMedisDataSet1 = New AppRekamMedis.dbRekamMedisDataSet1()
         Me.btnHapus = New System.Windows.Forms.Button()
@@ -50,14 +58,6 @@ Partial Class FormPasien
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.PasienTableAdapter = New AppRekamMedis.dbRekamMedisDataSet1TableAdapters.PasienTableAdapter()
-        Me.IdPasienDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NoKTPDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamaHewanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JenisHewanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JkHewanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AlamatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NoTeleponDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicMin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,7 +155,7 @@ Partial Class FormPasien
         '
         'pnlPasien
         '
-        Me.pnlPasien.BackColor = System.Drawing.Color.Sienna
+        Me.pnlPasien.BackColor = System.Drawing.Color.DarkMagenta
         Me.pnlPasien.Controls.Add(Me.DG)
         Me.pnlPasien.Controls.Add(Me.btnHapus)
         Me.pnlPasien.Controls.Add(Me.btnEdit)
@@ -176,7 +176,7 @@ Partial Class FormPasien
         Me.DG.AutoGenerateColumns = False
         Me.DG.BackgroundColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Indigo
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -208,6 +208,63 @@ Partial Class FormPasien
         Me.DG.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DG.Size = New System.Drawing.Size(783, 360)
         Me.DG.TabIndex = 12
+        '
+        'IdPasienDataGridViewTextBoxColumn
+        '
+        Me.IdPasienDataGridViewTextBoxColumn.DataPropertyName = "IdPasien"
+        Me.IdPasienDataGridViewTextBoxColumn.HeaderText = "No Pendaftaran"
+        Me.IdPasienDataGridViewTextBoxColumn.MinimumWidth = 100
+        Me.IdPasienDataGridViewTextBoxColumn.Name = "IdPasienDataGridViewTextBoxColumn"
+        Me.IdPasienDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NoKTPDataGridViewTextBoxColumn
+        '
+        Me.NoKTPDataGridViewTextBoxColumn.DataPropertyName = "noKTP"
+        Me.NoKTPDataGridViewTextBoxColumn.HeaderText = "noKTP"
+        Me.NoKTPDataGridViewTextBoxColumn.Name = "NoKTPDataGridViewTextBoxColumn"
+        Me.NoKTPDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NamaDataGridViewTextBoxColumn
+        '
+        Me.NamaDataGridViewTextBoxColumn.DataPropertyName = "nama"
+        Me.NamaDataGridViewTextBoxColumn.HeaderText = "nama"
+        Me.NamaDataGridViewTextBoxColumn.Name = "NamaDataGridViewTextBoxColumn"
+        Me.NamaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NamaHewanDataGridViewTextBoxColumn
+        '
+        Me.NamaHewanDataGridViewTextBoxColumn.DataPropertyName = "namaHewan"
+        Me.NamaHewanDataGridViewTextBoxColumn.HeaderText = "namaHewan"
+        Me.NamaHewanDataGridViewTextBoxColumn.Name = "NamaHewanDataGridViewTextBoxColumn"
+        Me.NamaHewanDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'JenisHewanDataGridViewTextBoxColumn
+        '
+        Me.JenisHewanDataGridViewTextBoxColumn.DataPropertyName = "jenisHewan"
+        Me.JenisHewanDataGridViewTextBoxColumn.HeaderText = "jenisHewan"
+        Me.JenisHewanDataGridViewTextBoxColumn.Name = "JenisHewanDataGridViewTextBoxColumn"
+        Me.JenisHewanDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'JkHewanDataGridViewTextBoxColumn
+        '
+        Me.JkHewanDataGridViewTextBoxColumn.DataPropertyName = "jkHewan"
+        Me.JkHewanDataGridViewTextBoxColumn.HeaderText = "jkHewan"
+        Me.JkHewanDataGridViewTextBoxColumn.Name = "JkHewanDataGridViewTextBoxColumn"
+        Me.JkHewanDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AlamatDataGridViewTextBoxColumn
+        '
+        Me.AlamatDataGridViewTextBoxColumn.DataPropertyName = "alamat"
+        Me.AlamatDataGridViewTextBoxColumn.HeaderText = "alamat"
+        Me.AlamatDataGridViewTextBoxColumn.Name = "AlamatDataGridViewTextBoxColumn"
+        Me.AlamatDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NoTeleponDataGridViewTextBoxColumn
+        '
+        Me.NoTeleponDataGridViewTextBoxColumn.DataPropertyName = "noTelepon"
+        Me.NoTeleponDataGridViewTextBoxColumn.HeaderText = "noTelepon"
+        Me.NoTeleponDataGridViewTextBoxColumn.Name = "NoTeleponDataGridViewTextBoxColumn"
+        Me.NoTeleponDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PasienBindingSource
         '
@@ -362,63 +419,6 @@ Partial Class FormPasien
         'PasienTableAdapter
         '
         Me.PasienTableAdapter.ClearBeforeFill = True
-        '
-        'IdPasienDataGridViewTextBoxColumn
-        '
-        Me.IdPasienDataGridViewTextBoxColumn.DataPropertyName = "IdPasien"
-        Me.IdPasienDataGridViewTextBoxColumn.HeaderText = "No Pendaftaran"
-        Me.IdPasienDataGridViewTextBoxColumn.MinimumWidth = 100
-        Me.IdPasienDataGridViewTextBoxColumn.Name = "IdPasienDataGridViewTextBoxColumn"
-        Me.IdPasienDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NoKTPDataGridViewTextBoxColumn
-        '
-        Me.NoKTPDataGridViewTextBoxColumn.DataPropertyName = "noKTP"
-        Me.NoKTPDataGridViewTextBoxColumn.HeaderText = "noKTP"
-        Me.NoKTPDataGridViewTextBoxColumn.Name = "NoKTPDataGridViewTextBoxColumn"
-        Me.NoKTPDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NamaDataGridViewTextBoxColumn
-        '
-        Me.NamaDataGridViewTextBoxColumn.DataPropertyName = "nama"
-        Me.NamaDataGridViewTextBoxColumn.HeaderText = "nama"
-        Me.NamaDataGridViewTextBoxColumn.Name = "NamaDataGridViewTextBoxColumn"
-        Me.NamaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NamaHewanDataGridViewTextBoxColumn
-        '
-        Me.NamaHewanDataGridViewTextBoxColumn.DataPropertyName = "namaHewan"
-        Me.NamaHewanDataGridViewTextBoxColumn.HeaderText = "namaHewan"
-        Me.NamaHewanDataGridViewTextBoxColumn.Name = "NamaHewanDataGridViewTextBoxColumn"
-        Me.NamaHewanDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'JenisHewanDataGridViewTextBoxColumn
-        '
-        Me.JenisHewanDataGridViewTextBoxColumn.DataPropertyName = "jenisHewan"
-        Me.JenisHewanDataGridViewTextBoxColumn.HeaderText = "jenisHewan"
-        Me.JenisHewanDataGridViewTextBoxColumn.Name = "JenisHewanDataGridViewTextBoxColumn"
-        Me.JenisHewanDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'JkHewanDataGridViewTextBoxColumn
-        '
-        Me.JkHewanDataGridViewTextBoxColumn.DataPropertyName = "jkHewan"
-        Me.JkHewanDataGridViewTextBoxColumn.HeaderText = "jkHewan"
-        Me.JkHewanDataGridViewTextBoxColumn.Name = "JkHewanDataGridViewTextBoxColumn"
-        Me.JkHewanDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AlamatDataGridViewTextBoxColumn
-        '
-        Me.AlamatDataGridViewTextBoxColumn.DataPropertyName = "alamat"
-        Me.AlamatDataGridViewTextBoxColumn.HeaderText = "alamat"
-        Me.AlamatDataGridViewTextBoxColumn.Name = "AlamatDataGridViewTextBoxColumn"
-        Me.AlamatDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NoTeleponDataGridViewTextBoxColumn
-        '
-        Me.NoTeleponDataGridViewTextBoxColumn.DataPropertyName = "noTelepon"
-        Me.NoTeleponDataGridViewTextBoxColumn.HeaderText = "noTelepon"
-        Me.NoTeleponDataGridViewTextBoxColumn.Name = "NoTeleponDataGridViewTextBoxColumn"
-        Me.NoTeleponDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FormPasien
         '
