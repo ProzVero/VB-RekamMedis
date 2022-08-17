@@ -27,21 +27,23 @@ Partial Class FormLogin
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtuser = New System.Windows.Forms.TextBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtpass = New System.Windows.Forms.TextBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btnlogin = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnlogin = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtuser = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.txtpass = New System.Windows.Forms.TextBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Panel5.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
@@ -84,52 +86,27 @@ Partial Class FormLogin
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "KOTA PALOPO"
         '
-        'txtuser
+        'Panel5
         '
-        Me.txtuser.BackColor = System.Drawing.SystemColors.Control
-        Me.txtuser.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtuser.ForeColor = System.Drawing.Color.Gray
-        Me.txtuser.Location = New System.Drawing.Point(21, 12)
-        Me.txtuser.Name = "txtuser"
-        Me.txtuser.Size = New System.Drawing.Size(219, 22)
-        Me.txtuser.TabIndex = 0
-        Me.txtuser.Text = "username"
-        Me.txtuser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Panel5.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.WhatsApp_Image_2022_08_16_at_20_01_13
+        Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel5.Controls.Add(Me.Panel4)
+        Me.Panel5.Controls.Add(Me.PictureBox3)
+        Me.Panel5.Location = New System.Drawing.Point(0, 145)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(900, 418)
+        Me.Panel5.TabIndex = 16
         '
-        'Panel2
+        'Panel4
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.txtuser)
-        Me.Panel2.Location = New System.Drawing.Point(125, 30)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(262, 53)
-        Me.Panel2.TabIndex = 10
-        '
-        'txtpass
-        '
-        Me.txtpass.BackColor = System.Drawing.SystemColors.Control
-        Me.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpass.ForeColor = System.Drawing.Color.Gray
-        Me.txtpass.Location = New System.Drawing.Point(21, 12)
-        Me.txtpass.Name = "txtpass"
-        Me.txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtpass.Size = New System.Drawing.Size(219, 22)
-        Me.txtpass.TabIndex = 0
-        Me.txtpass.Text = "password"
-        Me.txtpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.txtpass)
-        Me.Panel3.Location = New System.Drawing.Point(125, 104)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(262, 53)
-        Me.Panel3.TabIndex = 11
+        Me.Panel4.BackColor = System.Drawing.Color.DarkViolet
+        Me.Panel4.Controls.Add(Me.btnlogin)
+        Me.Panel4.Controls.Add(Me.Panel2)
+        Me.Panel4.Controls.Add(Me.Panel3)
+        Me.Panel4.Location = New System.Drawing.Point(209, 32)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(504, 257)
+        Me.Panel4.TabIndex = 13
         '
         'btnlogin
         '
@@ -147,24 +124,71 @@ Partial Class FormLogin
         Me.btnlogin.Text = "LOGIN"
         Me.btnlogin.UseVisualStyleBackColor = False
         '
-        'Panel4
+        'Panel2
         '
-        Me.Panel4.BackColor = System.Drawing.Color.PaleGreen
-        Me.Panel4.Controls.Add(Me.btnlogin)
-        Me.Panel4.Controls.Add(Me.Panel2)
-        Me.Panel4.Controls.Add(Me.Panel3)
-        Me.Panel4.Location = New System.Drawing.Point(198, 186)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(504, 257)
-        Me.Panel4.TabIndex = 13
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.txtuser)
+        Me.Panel2.Location = New System.Drawing.Point(125, 30)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(262, 53)
+        Me.Panel2.TabIndex = 10
+        '
+        'txtuser
+        '
+        Me.txtuser.BackColor = System.Drawing.Color.White
+        Me.txtuser.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtuser.ForeColor = System.Drawing.Color.Gray
+        Me.txtuser.Location = New System.Drawing.Point(21, 12)
+        Me.txtuser.Name = "txtuser"
+        Me.txtuser.Size = New System.Drawing.Size(219, 22)
+        Me.txtuser.TabIndex = 0
+        Me.txtuser.Text = "username"
+        Me.txtuser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.txtpass)
+        Me.Panel3.Location = New System.Drawing.Point(125, 104)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(262, 53)
+        Me.Panel3.TabIndex = 11
+        '
+        'txtpass
+        '
+        Me.txtpass.BackColor = System.Drawing.Color.White
+        Me.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtpass.ForeColor = System.Drawing.Color.Gray
+        Me.txtpass.Location = New System.Drawing.Point(21, 12)
+        Me.txtpass.Name = "txtpass"
+        Me.txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtpass.Size = New System.Drawing.Size(219, 22)
+        Me.txtpass.TabIndex = 0
+        Me.txtpass.Text = "password"
+        Me.txtpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.RM1
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox3.Location = New System.Drawing.Point(719, 187)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(190, 228)
+        Me.PictureBox3.TabIndex = 15
+        Me.PictureBox3.TabStop = False
         '
         'PictureBox2
         '
-        Me.PictureBox2.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.RM2
+        Me.PictureBox2.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.pdhi
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox2.Location = New System.Drawing.Point(691, 20)
+        Me.PictureBox2.Location = New System.Drawing.Point(720, 20)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(120, 122)
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 100)
         Me.PictureBox2.TabIndex = 14
         Me.PictureBox2.TabStop = False
         '
@@ -178,44 +202,34 @@ Partial Class FormLogin
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.SystemColors.Control
-        Me.PictureBox3.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.RM1
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox3.Location = New System.Drawing.Point(710, 332)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(190, 228)
-        Me.PictureBox3.TabIndex = 15
-        Me.PictureBox3.TabStop = False
-        '
         'FormLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(900, 560)
-        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -233,4 +247,5 @@ Partial Class FormLogin
     Friend WithEvents Panel4 As Panel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Panel5 As Panel
 End Class

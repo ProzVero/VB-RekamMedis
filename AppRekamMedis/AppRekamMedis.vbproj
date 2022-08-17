@@ -270,6 +270,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>dbRekamMedis.mdf</DependentUpon>
     </Content>
+    <None Include="Res\WhatsApp Image 2022-08-16 at 20.01.13.jpeg" />
+    <None Include="Res\puskeswan.png" />
+    <None Include="Res\pdhi.png" />
     <None Include="Res\logou.png" />
     <None Include="Res\RM2.png" />
     <None Include="Res\RM1.png" />
@@ -287,6 +290,8 @@
     <None Include="Res\B.png" />
     <None Include="Res\C.png" />
     <None Include="Res\D.png" />
+    <None Include="Res\back-login.png" />
+    <None Include="Res\home.png" />
     <Content Include="Res\logo.png" />
     <None Include="Res\rekammedik.png" />
   </ItemGroup>

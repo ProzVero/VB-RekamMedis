@@ -72,13 +72,20 @@ Public Class FormMain
         WindowState = FormWindowState.Maximized
         Label1.Left = (Me.Width - Label1.Width) / 2
         Label2.Left = (Me.Width - Label2.Width) / 2
-        PictureBox2.Left = Me.Width - PictureBox2.Width - 80
+        PictureBox2.Left = Me.Width - PictureBox2.Width - 100
         picClose.Left = Me.Width - 30
         PicMin.Left = Me.Width - 60
         PictureBox3.Left = Me.Width - 90
         Panel1.Width = Me.Width
-        pnlLogin.Left = (Me.Width - pnlLogin.Width) / 2
-        pnlLogin.Top = ((Me.Height - pnlLogin.Height + 150) / 2)
+
+        pnlLogin.Width = Me.Width
+        pnlLogin.Height = Me.Height - 145
+
+        Panel4.Left = (pnlLogin.Width / 10) * 1
+        Panel6.Left = (pnlLogin.Width / 10) * 3
+        Panel5.Left = (pnlLogin.Width / 10) * 5
+        Panel7.Left = (pnlLogin.Width / 10) * 7
+
     End Sub
 
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles Me.Load

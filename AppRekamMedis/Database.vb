@@ -9,8 +9,8 @@ Public Class Database
 
     Public Sub koneksi()
         Try
-            'konek = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\DataApp\vs\Rekam-Medis\AppRekamMedis\AppRekamMedis\dbRekamMedis.mdf;Integrated Security=True")
-            konek = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & appPath & "\dbRekamMedis.mdf;Integrated Security=True")
+            konek = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\DataApp\vs\Rekam-Medis\AppRekamMedis\AppRekamMedis\dbRekamMedis.mdf;Integrated Security=True")
+            'konek = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & appPath & "\dbRekamMedis.mdf;Integrated Security=True")
             konek.Open()
 
             'MsgBox("Database berhasil terkoneksi in" & appPath, MsgBoxStyle.Information, "Konfirmasi")

@@ -83,9 +83,11 @@ Public Class FormLogin
         Label2.Left = (Me.Width - Label2.Width) / 2
         PictureBox2.Left = Me.Width - PictureBox2.Width - 80
         Panel4.Left = (Me.Width - Panel4.Width) / 2
-        Panel4.Top = (Me.Height - Panel4.Height + 20) / 2
+        Panel4.Top = (Panel5.Height - Panel4.Height + 20) / 2
+        Panel5.Width = Me.Width
+        Panel5.Height = Me.Height - 145
         PictureBox3.Left = Me.Width - PictureBox3.Width
-        PictureBox3.Top = Me.Height - PictureBox3.Height
+        PictureBox3.Top = Panel5.Height - PictureBox3.Height
 
         Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
         WindowState = FormWindowState.Maximized

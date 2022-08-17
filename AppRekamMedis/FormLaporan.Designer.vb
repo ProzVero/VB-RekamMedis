@@ -345,11 +345,11 @@ Partial Class FormLaporan
         '
         'PictureBox2
         '
-        Me.PictureBox2.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.RM2
+        Me.PictureBox2.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.pdhi
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox2.Location = New System.Drawing.Point(689, 18)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(120, 122)
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 100)
         Me.PictureBox2.TabIndex = 37
         Me.PictureBox2.TabStop = False
         '
@@ -381,7 +381,7 @@ Partial Class FormLaporan
         Me.PictureBox1.BackColor = System.Drawing.SystemColors.Control
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(80, 18)
+        Me.PictureBox1.Location = New System.Drawing.Point(100, 18)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 100)
         Me.PictureBox1.TabIndex = 34
@@ -464,7 +464,7 @@ Partial Class FormLaporan
         'btnBack
         '
         Me.btnBack.BackColor = System.Drawing.Color.Transparent
-        Me.btnBack.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.back2
+        Me.btnBack.BackgroundImage = Global.AppRekamMedis.My.Resources.Resources.home
         Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBack.FlatAppearance.BorderSize = 0

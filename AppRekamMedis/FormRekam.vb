@@ -21,7 +21,7 @@ Public Class FormRekam
         WindowState = FormWindowState.Maximized
         Label1.Left = (Me.Width - Label1.Width) / 2
         Label2.Left = (Me.Width - Label2.Width) / 2
-        PictureBox2.Left = Me.Width - PictureBox2.Width - 80
+        PictureBox2.Left = Me.Width - PictureBox2.Width - 100
         picClose.Left = Me.Width - 30
         PicMin.Left = Me.Width - 60
         Panel1.Width = Me.Width
@@ -202,7 +202,7 @@ Public Class FormRekam
         Me.Close()
     End Sub
 
-    Private Sub picMin_Click(sender As Object, e As EventArgs)
+    Private Sub picMin_Click(sender As Object, e As EventArgs) Handles PicMin.Click
         Me.WindowState = WindowState.Minimized
     End Sub
 
